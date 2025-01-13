@@ -13,7 +13,7 @@ export default function MainLayout({ children }) {
         <Header />
         <div className="text-white grid grid-cols-4 mt-0 h-[calc(100vh-60px)]">
           
-          { pathname !== "/" ? <div className="p-3 border-r-2 border-[#1E2D3D]">
+          { pathname !== "/" ? <div className="border-r-2 border-[#1E2D3D]">
                 {
                     pathname === "/about-me" ? <Sidebar_About/> : 
                     pathname === "/projects" ? <Sidebar_Project/> :

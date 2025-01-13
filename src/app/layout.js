@@ -4,7 +4,7 @@ import MainLayout from "@/components/mainLayout";
 
 const firaCode = Fira_Code({
   variable: "--font-fira-code",
-  subsets: ["fira-code"],
+  subsets: ["latin"],
 });
 
 export const metadata = {
