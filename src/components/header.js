@@ -5,7 +5,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="grid grid-cols-4 m-0 p-0 text-[#607B96] text-[14px] ">
+    <header className="grid grid-cols-4 m-0 p-0 text-[#607B96] text-[14px] sticky top-0 z-50 bg-[#011627] w-full">
       <div className="border-r-2 border-b-2 border-[#1E2D3D] p-3 group">
         <a href="/">
           <div className="group-hover:cursor-pointer">muhammad-faisal</div>

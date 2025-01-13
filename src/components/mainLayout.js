@@ -10,12 +10,12 @@ export default function MainLayout({ children }) {
   const pathname = usePathname();
   return (
     <>
-      <div className="">
+      <div className="m-0 p-0 h-screen">
         <Header />
 
         <div className="text-white grid grid-cols-4 mt-0 h-[calc(100vh-60px)] text-[14px]">
           
-          { pathname !== "/" ? <div className="border-r-2 border-[#1E2D3D]">
+          { pathname !== "/" ? <div className="border-r-2 border-[#1E2D3D] overflow-auto">
                 {
                     pathname === "/about-me" ? <Sidebar_About/> : 
                     pathname === "/projects" ? <Sidebar_Project/> :
