@@ -26,15 +26,17 @@ export default function Home() {
         <img
           src="/bg-blurs.png"
           alt="Background"
-          className="absolute right-0 w-[570px] h-[570px]"
+          className="absolute right-0 w-[570px] h-[570px] select-none"
         />
       </div>
       <div className="h-full flex flex-col justify-center">
-        Hi all. I am
-        <span className="text-[50px]"> Muhammad Faisal</span>
-        <span className="text-[#4D5BCE] text-[28px] ">
-          {"> "}<span id="typeIt"></span>
-        </span>
+        <div className="flex flex-col justify-center cursor-default select-none">
+          Hi all. I am
+          <span className="text-[50px]"> Muhammad Faisal</span>
+          <span className="text-[#4D5BCE] text-[28px] ">
+            {"> "}<span id="typeIt"></span>
+          </span>
+        </div>
         <div className="mt-10 flex flex-col gap-2">
           <div>
             <span className="text-[#607B96]">
