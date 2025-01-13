@@ -11,7 +11,7 @@ export default function MainLayout({ children }) {
     <>
       <div className="">
         <Header />
-        <div className="text-white grid grid-cols-4 mt-0 h-[calc(100vh-60px)]">
+        <div className="text-white grid grid-cols-4 mt-0 h-[calc(100vh-60px)] text-[14px]">
           
           { pathname !== "/" ? <div className="border-r-2 border-[#1E2D3D]">
                 {

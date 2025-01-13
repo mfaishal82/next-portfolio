@@ -7,17 +7,17 @@ export default function Header() {
   return (
     <header className="grid grid-cols-4 m-0 p-0 text-[#607B96] text-[14px] ">
       <div className="border-r-2 border-b-2 border-[#1E2D3D] p-3 group">
-        <Link href="/">
+        <a href="/">
           <div className="group-hover:cursor-pointer">muhammad-faisal</div>
-        </Link>
+        </a>
       </div>
       <div className="border-b-2 border-[#1E2D3D] col-span-3 flex flex-row justify-between">
         <div className="border-r-2 border-[#1E2D3D] hover:text-white group">
-          <Link href="/">
+          <a href="/">
             <div className={`py-2.5 px-5 group-hover:cursor-pointer group-hover:border-b-[3px] group-hover:border-[#FEA55F] ${pathname === "/" ? "border-b-[3px] border-[#FEA55F] text-white" : ""}`}>
               _hello
             </div>
-          </Link>
+          </a>
         </div>
         <div className="border-r-2 border-[#1E2D3D] hover:text-white group">
           <Link href="/about-me">

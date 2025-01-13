@@ -1,5 +1,25 @@
+"use client"
+import TypeIt from "typeit";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    new TypeIt("#typeIt", {
+      strings: ["Fullstack Developer"],
+      speed: 100,
+      waitUntilVisible: true,
+    }).go();
+  }, []);
+
+  // useEffect(() => {
+  //   new TypeIt("#typeIt", {
+  //     strings: ["Hi I'm Full Stack Developer"],
+  //     afterStep: function () {
+  //       instance.getElement().style.color = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+  //     },
+  //   }).go();
+  // }, []);
+
   return (
     <>
       <div className="bg-right bg-cover bg-no-repeat relative -inset-x-[140px]">
@@ -13,7 +33,7 @@ export default function Home() {
         Hi all. I am
         <span className="text-[50px]"> Muhammad Faisal</span>
         <span className="text-[#4D5BCE] text-[28px] ">
-          {"> Fullstack Developer"}
+          {"> "}<span id="typeIt"></span>
         </span>
         <div className="mt-10 flex flex-col gap-2">
           <div>

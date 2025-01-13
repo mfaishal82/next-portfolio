@@ -21,6 +21,7 @@ export default function RootLayout({ children }) {
       >
         <MainLayout>{children}</MainLayout>
         {/* <script src="/node_modules/preline/dist/preline.js"></script> */}
+        <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
       </body>
     </html>
   );
