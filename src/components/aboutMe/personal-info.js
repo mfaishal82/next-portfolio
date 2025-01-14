@@ -1,4 +1,10 @@
+"use client"
+import { useAppContext } from "@/context/context"
+import { usePathname } from "next/navigation";
+
 export default function PersonalInfo() {
+  const { section, setSection } = useAppContext();
+
   return (
     <>
       <div className="border-b-2 border-[#1E2D3D] text-white flex flex-row gap-2 p-2 items-center cursor-default">
@@ -17,11 +23,11 @@ export default function PersonalInfo() {
         personal-info
       </div>
 
-      <div className="border-b-2 border-[#1E2D3D] text-white flex flex-col gap-2 justify-center p-2 py-4">
+      <div className="border-b-2 border-[#1E2D3D] flex flex-col gap-2 justify-center p-2 py-4">
         {/* bio */}
-        <div className="flex flex-row hover:text-white cursor-pointer gap-3 items-center">
-            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.69658 7.18971L0.746582 2.23971L2.16058 0.82571L8.52458 7.18971L2.16058 13.5537L0.746582 12.1397L5.69658 7.18971Z" fill="#607B96"/>
+        <button onClick={ () => setSection('bio') } className={`flex flex-row hover:text-white cursor-pointer gap-3 items-center ${ section === 'bio' ? 'text-white' : '' }`}>
+            <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.364 5.27715L11.314 0.327148L12.728 1.74115L6.364 8.10515L0 1.74115L1.414 0.327148L6.364 5.27715Z" fill="#607B96"/>
             </svg>
 
             <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,10 +35,17 @@ export default function PersonalInfo() {
             </svg>
 
             bio
+        </button>
+        <div onClick={ () => setSection('exp') } className="flex flex-row hover:text-white cursor-pointer gap-2 items-center text-[#607B96] ml-5 mt-1">
+            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.44684 0.832031H16.0466C16.2617 0.832031 16.468 0.917486 16.6201 1.0696C16.7722 1.22171 16.8577 1.42801 16.8577 1.64313V14.6207C16.8577 14.8358 16.7722 15.0421 16.6201 15.1942C16.468 15.3463 16.2617 15.4318 16.0466 15.4318H1.44684C1.23172 15.4318 1.02542 15.3463 0.873307 15.1942C0.721197 15.0421 0.635742 14.8358 0.635742 14.6207V1.64313C0.635742 1.42801 0.721197 1.22171 0.873307 1.0696C1.02542 0.917486 1.23172 0.832031 1.44684 0.832031ZM4.69122 10.9707V7.72635L6.31342 9.34854L7.93561 7.72635V10.9707H9.5578V5.29306H7.93561L6.31342 6.91525L4.69122 5.29306H3.06903V10.9707H4.69122ZM13.6133 8.53745V5.29306H11.9911V8.53745H10.3689L12.8022 10.9707L15.2355 8.53745H13.6133Z" fill="#81A1C1"/>
+            </svg>
+
+            <span className="ml-1">experiences</span>
         </div>
 
         {/* interests */}
-        <div className="flex flex-row hover:text-white cursor-pointer gap-3 items-center text-[#607B96] ">
+        <button onClick={ () => setSection('interests') } className={`flex flex-row hover:text-white cursor-pointer gap-3 items-center text-[#607B96] ${ section === 'interests' ? 'text-white' : '' }`}>
             <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5.69658 7.18971L0.746582 2.23971L2.16058 0.82571L8.52458 7.18971L2.16058 13.5537L0.746582 12.1397L5.69658 7.18971Z" fill="#607B96"/>
             </svg>
@@ -42,11 +55,11 @@ export default function PersonalInfo() {
             </svg>
 
             interests
-        </div>
+        </button>
 
-        {/* eduaction */}
+        {/* education */}
         <div>
-            <div className="flex flex-row hover:text-white cursor-pointer gap-2 items-center text-[#607B96] ">
+            <button onClick={ () => setSection('education') } className={`flex flex-row hover:text-white cursor-pointer gap-2 items-center text-[#607B96] ${ section === 'education' ? 'text-white' : '' }`}>
                 <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.364 5.27715L11.314 0.327148L12.728 1.74115L6.364 8.10515L0 1.74115L1.414 0.327148L6.364 5.27715Z" fill="#607B96"/>
                 </svg>
@@ -56,20 +69,13 @@ export default function PersonalInfo() {
                 </svg>
 
                 <span className="ml-1">education</span>
-            </div>
-            <div className="flex flex-row hover:text-white cursor-pointer gap-2 items-center text-[#607B96] ml-5 mt-1">
+            </button>
+            <div onClick={ () => setSection('certificates') } className="flex flex-row hover:text-white cursor-pointer gap-2 items-center text-[#607B96] ml-5 mt-1">
                 <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.44684 0.832031H16.0466C16.2617 0.832031 16.468 0.917486 16.6201 1.0696C16.7722 1.22171 16.8577 1.42801 16.8577 1.64313V14.6207C16.8577 14.8358 16.7722 15.0421 16.6201 15.1942C16.468 15.3463 16.2617 15.4318 16.0466 15.4318H1.44684C1.23172 15.4318 1.02542 15.3463 0.873307 15.1942C0.721197 15.0421 0.635742 14.8358 0.635742 14.6207V1.64313C0.635742 1.42801 0.721197 1.22171 0.873307 1.0696C1.02542 0.917486 1.23172 0.832031 1.44684 0.832031ZM4.69122 10.9707V7.72635L6.31342 9.34854L7.93561 7.72635V10.9707H9.5578V5.29306H7.93561L6.31342 6.91525L4.69122 5.29306H3.06903V10.9707H4.69122ZM13.6133 8.53745V5.29306H11.9911V8.53745H10.3689L12.8022 10.9707L15.2355 8.53745H13.6133Z" fill="#81A1C1"/>
                 </svg>
 
-                <span className="ml-1">high-school</span>
-            </div>
-            <div className="flex flex-row hover:text-white cursor-pointer gap-2 items-center text-[#607B96] ml-5 mt-1">
-                <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.44684 0.832031H16.0466C16.2617 0.832031 16.468 0.917486 16.6201 1.0696C16.7722 1.22171 16.8577 1.42801 16.8577 1.64313V14.6207C16.8577 14.8358 16.7722 15.0421 16.6201 15.1942C16.468 15.3463 16.2617 15.4318 16.0466 15.4318H1.44684C1.23172 15.4318 1.02542 15.3463 0.873307 15.1942C0.721197 15.0421 0.635742 14.8358 0.635742 14.6207V1.64313C0.635742 1.42801 0.721197 1.22171 0.873307 1.0696C1.02542 0.917486 1.23172 0.832031 1.44684 0.832031ZM4.69122 10.9707V7.72635L6.31342 9.34854L7.93561 7.72635V10.9707H9.5578V5.29306H7.93561L6.31342 6.91525L4.69122 5.29306H3.06903V10.9707H4.69122ZM13.6133 8.53745V5.29306H11.9911V8.53745H10.3689L12.8022 10.9707L15.2355 8.53745H13.6133Z" fill="#81A1C1"/>
-                </svg>
-
-                <span className="ml-1">university</span>
+                <span className="ml-1">certificates</span>
             </div>
         </div>
       </div>

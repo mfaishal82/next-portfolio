@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 export default function Contacts() {
   return <>
-    <div className="border-b-2 border-[#1E2D3D] p-2 text-white flex flex-row gap-2 items-center cursor-default ">
+    <Link href={"/contact-me"} className="border-b-2 border-[#1E2D3D] p-2 text-white flex flex-row gap-2 items-center cursor-pointer ">
         <svg
         width="9"
         height="7"
@@ -15,7 +17,7 @@ export default function Contacts() {
         </svg>
 
         contacts
-    </div>
+    </Link>
 
     <div className="border-b-2 border-[#1E2D3D] text-white flex flex-col gap-2 justify-center p-2 py-4">
         <div className="flex flex-row gap-2 items-center text-[#607B96] ">

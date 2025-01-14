@@ -1,7 +1,9 @@
+"use client"
 import Contacts from "./contacts";
 import PersonalInfo from "./personal-info";
 
 export default function Sidebar_About() {
+
   return (
     <div className="flex flex-row text-[#607B96] text-[14px] h-full ">
       <div className="w-1/4 flex flex-col gap-5 items-center py-3">
@@ -88,7 +90,7 @@ export default function Sidebar_About() {
       </div>
 
       <div className="w-3/4 border-l-2 border-[#1E2D3D]">
-        <PersonalInfo />
+        <PersonalInfo/>
         
         <Contacts />
       </div>

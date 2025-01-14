@@ -21,7 +21,7 @@ export default function Home() {
   // }, []);
 
   return (
-    <div className="flex flex-row items-center h-screen relative">
+    <div className="flex flex-row items-center h-full relative overflow-auto mb-24">
       <div className="h-full flex flex-col justify-center">
         <div className="flex flex-col justify-center cursor-default select-none">
           Hi all. I am
@@ -71,11 +71,11 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-right bg-cover bg-no-repeat -inset-x-[140px]">
+      <div className="bg-right bg-cover bg-no-repeat -inset-x-[140px] max-sm:hidden">
         <img
           src="/bg-blurs.png"
           alt="Background"
-          className="absolute right-0 inset-y-36 w-[50%] h-[70%] select-none"
+          className="fixed right-0 inset-y-36 w-[50%] h-[70%] select-none"
         />
       </div>
     </div>

@@ -1,7 +1,8 @@
 import { Fira_Code } from "next/font/google";
 import "@/app/globals.css";
-import MainLayout from "@/components/mainLayout";
 import "./globals.css";
+import MainLayout from "@/components/layout/mainLayout";
+import { AppProvider } from '@/context/context';
 
 const firaCode = Fira_Code({
   variable: "--font-fira-code",
@@ -17,10 +18,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${firaCode.variable} bg-[#011627] overflow-y-hidden max-[1234px]:overflow-auto `}
+        className={`${firaCode.variable} bg-[#011627] overflow-auto `}
         style={{ fontFamily: "var(--font-fira-code)" }}
       >
-        <MainLayout>{children}</MainLayout>
+        <AppProvider>
+          <MainLayout>{children}</MainLayout>
+        </AppProvider>
         {/* <script src="/node_modules/preline/dist/preline.js"></script> */}
         <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
       </body>
