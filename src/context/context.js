@@ -1,15 +1,20 @@
 "use client"
+import projects from '@/project';
 import { createContext, useContext, useState } from 'react';
 
 const AppContext = createContext();
 
 export function AppProvider({ children }) {
     const [section, setSection] = useState('bio');
+    const listProjects = projects;
     // const [test, setTest] = useState('test');
+
+    // console.log(listProjects)
 
     const value = {
         section,
         setSection,
+        listProjects
         // test,
         // setTest
     };
