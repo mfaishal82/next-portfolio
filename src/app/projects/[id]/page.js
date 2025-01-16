@@ -44,7 +44,7 @@ export default function ProjectDetail() {
       {/* header */}
       <div className="grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96]">
         <div className="">
-          <div className="p-2 pr-3 border-r-2 border-[#1E2D3D] w-[50%] flex flex-row justify-between">
+          <div className="p-2 pr-3 border-r-2 border-[#1E2D3D] w-[50%] flex flex-row justify-between max-sm:col-span-2 max-sm:w-full">
             _{project.title}
             <Link href="/projects">
               <span className="select-none cursor-default">x</span>
@@ -60,7 +60,7 @@ export default function ProjectDetail() {
           {" "}
           // Project {project.type} / _{project.title} / {project.framework}{" "}
         </h1>
-        <div className="w-[70%] border border-[#1E2D3D] rounded-xl">
+        <div className="w-[70%] max-sm:w-full border border-[#1E2D3D] rounded-xl max-sm:relative max-sm:z-0">
           <Swiper
             navigation={true}
             loop={true}

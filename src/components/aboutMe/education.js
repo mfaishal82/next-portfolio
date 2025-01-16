@@ -7,18 +7,18 @@ export default function Education() {
     <>
       {/* header */}
       <div className="grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96]">
-        <div className="border-r-2 border-[#1E2D3D]">
-          <div className="p-2 pr-5 border-r-2 border-[#1E2D3D] w-[200px] flex flex-row justify-between">
-            education-info
-            <span className="select-none cursor-default">x</span>
+            <div className="border-r-2 border-[#1E2D3D]">
+              <div className="p-2 pr-5 w-[200px] flex flex-row justify-between">
+              education-info
+              <span className="select-none cursor-default">x</span>
           </div>
         </div>
       </div>
       {/* end header */}
 
       {/* body */}
-      <div className="grid grid-cols-2 text-[14px] border-[#1E2D3D] text-[#607B96] h-full">
-        <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5">
+      <div className="grid grid-cols-2 max-sm:grid-cols-1 text-[14px] border-[#1E2D3D] text-[#607B96] h-full">
+          <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5">
           <div className="ml-5 mt-5">
             {/* 3 */}
             <div className="flex gap-x-3">
@@ -105,7 +105,7 @@ export default function Education() {
           </div>
         </div>
 
-        <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5 hover:scale-105 hover:duration-500">
+        <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5 hover:scale-105 hover:duration-500 max-sm:hidden">
             { show === "NC" && <img src="NC.png" />  }
             { show === "HCK" && <img src="HCK.png" />}            
         </div>

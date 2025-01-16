@@ -5,8 +5,8 @@ import PersonalInfo from "./personal-info";
 export default function Sidebar_About() {
 
   return (
-    <div className="flex flex-row text-[#607B96] text-[14px] h-full ">
-      <div className="w-1/4 flex flex-col gap-5 items-center py-3">
+    <div className="flex flex-row text-[#607B96] text-[14px] h-full max-sm:border-b-2 max-sm:border-[#1E2D3D]">
+      <div className="w-1/4 flex flex-col gap-5 items-center py-3 max-sm:hidden">
         <div className="cursor-pointer hover:shadow-lg hover:shadow-slate-800">
           <svg
             width="24"
@@ -89,7 +89,7 @@ export default function Sidebar_About() {
         </div>
       </div>
 
-      <div className="w-3/4 border-l-2 border-[#1E2D3D]">
+      <div className="w-3/4 max-sm:w-full border-l-2 border-[#1E2D3D]">
         <PersonalInfo/>
         
         <Contacts />
