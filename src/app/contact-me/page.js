@@ -12,29 +12,29 @@ export default function Page() {
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const [toastType, setToastType] = useState('');
+  const [status, setStatus] = useState('');
   const [formData, setFormData] = useState({
       from_name: name,
       reply_to: email,
       message: message
   });
 
-  console.log(SERVICE_ID, TEMPLATE_ID, USER_ID)
-
-  // console.log(formData)
-
   function sendEmail(e) {
     e.preventDefault();
-
       emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID)
           .then((result) => {
               console.log(result.text);
+              setStatus('Your message has been sent successfully!');
               // setToastMessage('Message has been sent successfully!');
               // setToastType('success');
               // setShowToast(true);
               setFormData({ from_name: '', reply_to: '', message: '' });
+              setTimeout(() => setStatus(false), 3000);
               // setTimeout(() => setShowToast(false), 3000);
           }, (error) => {
               console.log(error.text);
+              setStatus('Failed to send email. Please try again later.');
+              setTimeout(() => setStatus(false), 3000);
               // setToastMessage('Failed to send email. Please try again.');
               // setToastType('error');
               // setShowToast(true);
@@ -73,19 +73,19 @@ export default function Page() {
                   <form onSubmit={sendEmail} className="w-[80%] self-center">
                     <div className="mb-5">
                       <label className="block text-[#607B96] text-[14px] mb-2">_name:</label>
-                      <input onChange={ () => {
+                      <input name="from_name" value={name} onChange={ () => {
                         setName(event.target.value);
                       } } type="text" className="w-full bg-[#1E2D3D] text-[#607B96] border-2 border-[#1E2D3D] rounded-md py-1 px-3" />
                     </div>
                     <div className="mb-5">
                       <label className="block text-[#607B96] text-[14px] mb-2">_email:</label>
-                      <input onChange={ () => {
+                      <input name="reply_to" value={email} onChange={ () => {
                         setEmail(event.target.value);
                       } } type="email" className="w-full bg-[#1E2D3D] text-[#607B96] border-2 border-[#1E2D3D] rounded-md py-1 px-3" />
                     </div>
                     <div className="mb-5">
                       <label className="block text-[#607B96] text-[14px] mb-2">_message:</label>
-                      <textarea onChange={ () => {
+                      <textarea name="message" value={message} onChange={ () => {
                         setMessage(event.target.value);
                       } } className="w-full bg-[#1E2D3D] text-[#607B96] border-2 border-[#1E2D3D] rounded-md py-1 px-3" />
                     </div>
@@ -93,6 +93,9 @@ export default function Page() {
                       <button className="bg-[#1C2B3A] text-white hover:bg-[#607B96] hover:text-[#1E2D3D] text-[14px] py-1 px-3 rounded-md">submit-message</button>
                     </div>
                   </form>
+                  <div className="w-[80%] self-center bg-[#1E2D3D] ">
+                    <p className="text-[#607B96] text-[14px] p-3">$ <span className='text-[#43D9AD]'>{status}</span></p>
+                  </div>
                 </div>
 
                 <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5">
@@ -112,11 +115,6 @@ export default function Page() {
                       <span className="ml-3"><span className="text-[#5565E8]">form.send</span>(<span className="text-[#5565E8]">message</span>);</span> <br />
                       {"}"})
                   </div>
-                  
-                  {/* name: {name} <br />
-                  email: {email} <br />
-                  message: {message} <br />
-                  date: {new Date().toLocaleDateString()} */}
                 </div>
             </div>
       </>

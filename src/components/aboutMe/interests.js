@@ -6,33 +6,32 @@ export default function Interests() {
         <div className="border-r-2 border-[#1E2D3D]">
           <div className="p-2 pr-5 border-r-2 border-[#1E2D3D] w-[250px] flex flex-row justify-between">
             interests-and-skills
-            <span>x</span>
+            <span className="select-none cursor-default">x</span>
           </div>
         </div>
       </div>
       {/* end header */}
 
       {/* body */}
-      <div className="grid grid-cols-2 text-[14px] border-[#1E2D3D] text-[#607B96] h-full">
+      <div className="grid grid-cols-2 text-[14px] border-[#1E2D3D] text-[#607B96]">
         <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5">
           {" // "} I am interested in frontend and backend development,
           specifically in web and mobile application development where I have
           expertise. <br /> <br />
-          {"/*"} Skill and Tech stack {"*/"} <br />
-          {"/*"} <br />
-          Language: JavaScript, TypeScript, PHP (explore) <br />
-          <br />
-          Front End: HTML, Tailwind/CSS, EJS, React JS, React Native, NextJS,
-          Laravel <br />
-          <br />
-          Deploy: AWS EC2, Google Cloud Engine, Microsoft Azure, FireBase,
-          Vercel <br />
-          <br />
-          Back End: Node JS, Express, Sequelize, PostgreSQL, MySQL, Rest API,
-          MongoDB, Redis <br />
-          <br />
-          Interests: Front End Developer, Back End Developer <br />
-          {"*/"}
+          <span className="text-[#43D9AD]">{"/*"} Skill and Tech stack {"*/"}</span>
+
+          <div>
+            {"/*"} <br />
+            <div><span className="text-[#43D9AD]">Language:</span> JavaScript, TypeScript, PHP (explore)</div>
+            <div><span className="text-[#43D9AD]">Front End:</span> HTML, Tailwind/CSS, EJS, React JS, React Native, NextJS,</div>
+            Laravel 
+            <div><span className="text-[#43D9AD]">Deploy:</span> AWS EC2, Google Cloud Engine, Microsoft Azure, FireBase,</div>
+            Vercel 
+            <div><span className="text-[#43D9AD]">Back End:</span> Node JS, Express, Sequelize, PostgreSQL, MySQL, Rest API,</div>
+            MongoDB, Redis 
+            <div><span className="text-[#43D9AD]">Interests:</span> Front End Developer, Back End Developer <br /></div>
+            {"*/"}
+          </div>
         </div>
         <div className="flex flex-col items-center gap-1 mt-10">
             <div className="flex flex-row flex-wrap gap-5">

@@ -11,15 +11,6 @@ export default function Home() {
     }).go();
   }, []);
 
-  // useEffect(() => {
-  //   new TypeIt("#typeIt", {
-  //     strings: ["Hi I'm Full Stack Developer"],
-  //     afterStep: function () {
-  //       instance.getElement().style.color = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
-  //     },
-  //   }).go();
-  // }, []);
-
   return (
     <div className="flex flex-row items-center h-full relative overflow-auto mb-24">
       <div className="h-full flex flex-col justify-center">

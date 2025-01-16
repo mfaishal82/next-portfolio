@@ -10,7 +10,7 @@ export default function Education() {
         <div className="border-r-2 border-[#1E2D3D]">
           <div className="p-2 pr-5 border-r-2 border-[#1E2D3D] w-[200px] flex flex-row justify-between">
             education-info
-            <span>x</span>
+            <span className="select-none cursor-default">x</span>
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@ export default function Education() {
               </div>
 
               <div className="grow pt-0.5 pb-8">
-                <button onClick={ () => setShow('NC') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
+                <button onClick={ () => setShow('NC') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-[#43D9AD]">
                   Nusacodes
                 </button>
                 <p className="mt-1 text-sm text-gray-600 dark:text-neutral-400">
@@ -61,7 +61,7 @@ export default function Education() {
               </div>
 
               <div className="grow pt-0.5 pb-8">
-                <button onClick={ () => setShow('HCK') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
+                <button onClick={ () => setShow('HCK') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-[#43D9AD]">
                   Hacktiv8
                 </button>
                 <p className="mt-1 text-sm text-gray-600 dark:text-neutral-400">
@@ -93,7 +93,7 @@ export default function Education() {
               </div>
 
               <div className="grow pt-0.5 pb-8">
-                <h3 className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
+                <h3 className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-[#43D9AD]">
                   Institut Agama Islam Persis - Bandung
                 </h3>
                 <p className="mt-1 text-sm text-gray-600 dark:text-neutral-400">
@@ -105,7 +105,7 @@ export default function Education() {
           </div>
         </div>
 
-        <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5">
+        <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5 hover:scale-105 hover:duration-500">
             { show === "NC" && <img src="NC.png" />  }
             { show === "HCK" && <img src="HCK.png" />}            
         </div>

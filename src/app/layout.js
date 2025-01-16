@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${firaCode.variable} bg-[#011627] overflow-auto `}
+        className={`${firaCode.variable} bg-[#011627] overflow-y-auto overflow-x-hidden scheme-dark`}
         style={{ fontFamily: "var(--font-fira-code)" }}
       >
         <AppProvider>

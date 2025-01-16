@@ -10,7 +10,7 @@ export default function Certificates() {
                 <div className="border-r-2 border-[#1E2D3D]">
                 <div className="p-2 pr-5 border-r-2 border-[#1E2D3D] w-[200px] flex flex-row justify-between">
                     skill-certificate
-                    <span>x</span>
+                    <span className="select-none cursor-default">x</span>
                 </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@ export default function Certificates() {
                     </div>
 
                     <div className="grow pt-0.5 pb-8">
-                        <button onClick={ () => setShow('java') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
+                        <button onClick={ () => setShow('java') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-[#43D9AD]">
                             Java Language {"("} from Pintaar {")"}
                         </button>
                         <p className="mt-1 text-sm text-gray-600 dark:text-neutral-400">
@@ -48,7 +48,7 @@ export default function Certificates() {
                     </div>
 
                     <div className="grow pt-0.5 pb-8">
-                        <button onClick={ () => setShow('js') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
+                        <button onClick={ () => setShow('js') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-[#43D9AD]">
                         {"Javascript (intermediate)"} {"("} from Hackerrank {")"}
                         </button>
                         <p className="mt-1 text-sm text-gray-600 dark:text-neutral-400">
@@ -66,7 +66,7 @@ export default function Certificates() {
                     </div>
 
                     <div className="grow pt-0.5 pb-8">
-                        <button onClick={ () => setShow('prob') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
+                        <button onClick={ () => setShow('prob') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-[#43D9AD]">
                         {"Problem Solving (basic)"} {"("} from Hackerrank {")"}
                         </button>
                         <p className="mt-1 text-sm text-gray-600 dark:text-neutral-400">
@@ -84,7 +84,7 @@ export default function Certificates() {
                     </div>
 
                     <div className="grow pt-0.5 pb-8">
-                        <button onClick={ () => setShow('css') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
+                        <button onClick={ () => setShow('css') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-[#43D9AD]">
                         {"CSS (basic)"} {"("} from Hackerrank {")"}
                         </button>
                         <p className="mt-1 text-sm text-gray-600 dark:text-neutral-400">
@@ -102,7 +102,7 @@ export default function Certificates() {
                     </div>
 
                     <div className="grow pt-0.5 pb-8">
-                        <button onClick={ () => setShow('sql') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
+                        <button onClick={ () => setShow('sql') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-[#43D9AD]">
                         {"SQL (basic)"} {"("} from Hackerrank {")"}
                         </button>
                         <p className="mt-1 text-sm text-gray-600 dark:text-neutral-400">
@@ -120,7 +120,7 @@ export default function Certificates() {
                     </div>
 
                     <div className="grow pt-0.5 pb-8">
-                        <button onClick={ () => setShow('react') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
+                        <button onClick={ () => setShow('react') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-[#43D9AD]">
                         {"React (basic)"} {"("} from Hackerrank {")"}
                         </button>
                         <p className="mt-1 text-sm text-gray-600 dark:text-neutral-400">
@@ -132,7 +132,7 @@ export default function Certificates() {
                 </div>
                 </div>
 
-                <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5">
+                <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5 hover:scale-105 hover:duration-500">
                     { show === "java" && <img src="java.png" />  }
                     { show === "js" && <img src="js.png" />}            
                     { show === "prob" && <img src="prob.png" />}            

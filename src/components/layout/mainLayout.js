@@ -7,8 +7,10 @@ import Footer from "./footer";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import React from 'react';
+import { useAppContext } from "@/context/context";
 
 export default function MainLayout({ children }) {
+  const { id } = useAppContext();
   const pathname = usePathname();
   return (
     <>
@@ -22,6 +24,7 @@ export default function MainLayout({ children }) {
                 {
                     pathname === "/about-me" ? <Sidebar_About /> : 
                     pathname === "/projects" ? <Sidebar_Project/> :
+                    pathname === `/projects/${id}` ? <Sidebar_Project/> :
                     pathname === "/contact-me" ? <Sidebar_Contact/> : null
                 }
             </div>

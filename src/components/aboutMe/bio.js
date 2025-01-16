@@ -28,8 +28,8 @@ export default function Bio() {
                     {" */ "}
                 </div>
                 <div>
-                    {" // "} What I do ? <br /> <br />
-                    {"/*"} Web Development {"*/"} <br />
+                    <span className="text-[#43D9AD]">{" // "} What I do ? </span> <br /> <br />
+                    {"/*"} <span className="text-[#43D9AD]">_web-development</span> {"*/"} <br />
                     {" /* "} <br />
                     <span className="ml-5">
                     As a programmer, I'm particularly drawn to the versatility and efficiency of React. I'm constantly excited to embark on new ventures that utilize React, NEXT.js, Laravel and explore innovative approaches to developing rapid, expandable, and intuitive applications.
@@ -38,7 +38,7 @@ export default function Bio() {
                     
                     <br /><br />
                     
-                    {"/*"} Mobile Development {"*/"} <br />
+                    {"/*"} <span className="text-[#43D9AD]">_mobile-development</span> {"*/"} <br />
                     {" /* "} <br />
                     <span className="ml-5">
                     As a mobile developer, I'm particularly drawn to the cross-platform capabilities of React Native. I'm constantly excited to explore new projects that harness React Native's potential and discover innovative approaches to building efficient, responsive, and user-centric mobile applications.

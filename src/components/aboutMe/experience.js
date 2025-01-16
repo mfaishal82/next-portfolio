@@ -11,7 +11,7 @@ export default function Experience() {
                 <div className="border-r-2 border-[#1E2D3D]">
                 <div className="p-2 pr-5 border-r-2 border-[#1E2D3D] w-[200px] flex flex-row justify-between">
                     experiences
-                    <span>x</span>
+                    <span className="select-none cursor-default">x</span>
                 </div>
                 </div>
             </div>
@@ -31,20 +31,18 @@ export default function Experience() {
                     </div>
 
                     <div className="grow pt-0.5 pb-8">
-                        <button onClick={ () => setShow('work') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
+                        <button onClick={ () => setShow('work') } className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-[#43D9AD]">
                             Programmer (frontend) - 2024
                         </button>
                         <p className="mt-1 text-sm text-gray-600 dark:text-neutral-400">
                             PT Talenta Sinergi Group
                         </p>
-                        <p>
-                            <ul>
-                                <li>• Participated in a developer training program led by a Project Manager, learning the React.js and Laravel(frontend html) stack for web application development.</li>
-                                <li>• Collaborated with 2 other developers to implement front-end pages using React and Laravel (HTML), ensuring responsive and user-friendly design.</li>
-                                <li>• Developed 6+ web pages from Figma designs to HTML within 3 months, maintaining adherence to established UI/UX standards.</li>
-                                <li>• Successfully converted designs from Figma into front-end components using React.js.</li>
-                            </ul>
-                        </p>
+                        <ul>
+                            <li>• Participated in a developer training program led by a Project Manager, learning the React.js and Laravel(frontend html) stack for web application development.</li>
+                            <li>• Collaborated with 2 other developers to implement front-end pages using React and Laravel (HTML), ensuring responsive and user-friendly design.</li>
+                            <li>• Developed 6+ web pages from Figma designs to HTML within 3 months, maintaining adherence to established UI/UX standards.</li>
+                            <li>• Successfully converted designs from Figma into front-end components using React.js.</li>
+                        </ul>
                     </div>
                     </div>
 

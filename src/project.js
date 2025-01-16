@@ -1,6 +1,5 @@
 const projects = [
     {
-        id: 10,
         title: "The Fast News",
         description: "A web-based online-media digital news paper app for the final project assignment of Nusacodes",
         url: "https://github.com/mfaishal82/media-online",
@@ -11,7 +10,6 @@ const projects = [
         type: "web"
     },
     {
-        id: 9,
         title: "The Library",
         description: "A simple web-based library information system app",
         url: "https://github.com/mfaishal82/Sistem-Informasi-Perpustakaan",
@@ -22,7 +20,6 @@ const projects = [
         type: "web"
     },
     {
-        id: 8,
         title: "Mini Project",
         description: "Mini Coding Live Project Assignment. A simple web-based project with responsive design",
         url: "https://github.com/revou-fundamental-course/27-may-24-mfaishal82",
@@ -33,7 +30,6 @@ const projects = [
         type: "web"
     },
     {
-        id: 7,
         title: "Tasmi' App",
         description: "A simple mobile app for listening Qur'an recitation and prayer time schedule",
         url: "https://github.com/mfaishal82/murattal-quran",
@@ -44,7 +40,6 @@ const projects = [
         type: "mobile"
     },
     {
-        id: 6,
         title: "MediChat Rx",
         description:
             "This is a chat-based AI mobile app where users can share health issues and receive real-time advice. It offers information on medications, including nearby pharmacies, hospital, etc",
@@ -56,7 +51,6 @@ const projects = [
         type: "mobile"
     },
     {
-        id: 5,
         title: "My eCommerce App",
         description: "A web-based e-commerce app made with NextJS",
         url: "https://mf-ecommerce.vercel.app/",
@@ -67,7 +61,6 @@ const projects = [
         type: "web"
     },
     {
-        id: 4,
         title: "Tic Tac Toe Multiplayer",
         description:
             "A web-based mini game Tic Tac Toe using Firebase Realtime Database",
@@ -79,7 +72,6 @@ const projects = [
         type: "web"
     },
     {
-        id: 3,
         title: "My Social Media App",
         description: "A mobile social app similar to YouTube using Expo",
         url: "https://expo.dev/preview/update?message=fixed&updateRuntimeVersion=1.0.0&createdAt=2024-03-31T22%3A21%3A06.794Z&slug=exp&projectId=2b93fbfb-fd6c-49e4-86cc-378364242f65&group=347e911f-696d-4cfd-8eb5-fe6b117ff53b",
@@ -90,7 +82,6 @@ const projects = [
         type: "mobile"
     },
     {
-        id: 2,
         title: "EduTech",
         description: "A web based educational course platform",
         url: "https://github.com/mfaishal82/Pro-EduTech",
@@ -101,7 +92,6 @@ const projects = [
         type: "web"
     },
     {
-        id: 1,
         title: "Fact Guard",
         description: "A web based social media app",
         url: "https://github.com/mfaishal82/PairPro-SocMed",

@@ -1,7 +1,7 @@
 
 export default function Footer() {
     return(
-        <footer className="fixed bottom-0 z-[9999] mt-auto w-full bg-[#011627] text-[#607B96] text-[14px] border-t-2 border-[#1E2D3D] flex flex-row">
+        <footer className="fixed bottom-0 z-[9999] mt-auto w-full bg-[#011627] text-[#43D9AD] text-[14px] border-t-2 border-[#1E2D3D] flex flex-row">
           <div className="p-3 border-r-2 border-[#1E2D3D] cursor-default select-none">
             find me in
           </div>
