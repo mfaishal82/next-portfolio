@@ -7,6 +7,7 @@ const AppContext = createContext();
 export function AppProvider({ children }) {
     const [section, setSection] = useState('bio');
     const [id, setId] = useState(0);
+    const [ openMenu, setOpenMenu ] = useState(false);
     const listProjects = projects;
     // const [test, setTest] = useState('test');
 
@@ -16,7 +17,8 @@ export function AppProvider({ children }) {
         section,
         setSection,
         listProjects,
-        id, setId
+        id, setId,
+        openMenu, setOpenMenu
         // test,
         // setTest
     };

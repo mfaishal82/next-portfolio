@@ -32,7 +32,7 @@ export default function Page() {
                 
               </div>
 
-              <div className="p-8 z-50 bg-[#011221] rounded-b-[15px] flex flex-col justify-between h-full">
+              <div className="p-8 z-[20] bg-[#011221] rounded-b-[15px] flex flex-col justify-between h-full">
                 {(project.description).substring(0, 100)}
                 <br />
                 <div className="flex flex-rows justify-between">

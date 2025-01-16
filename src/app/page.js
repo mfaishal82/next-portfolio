@@ -12,16 +12,16 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-row items-center h-full relative overflow-auto mb-24">
+    <div className="flex flex-row items-center h-full relative max-sm:absolute max-sm:top-10 overflow-auto mb-24 max-sm:p-7">
       <div className="h-full flex flex-col justify-center">
         <div className="flex flex-col justify-center cursor-default select-none">
           Hi all. I am
-          <span className="text-[50px]"> Muhammad Faisal</span>
-          <span className="text-[#4D5BCE] text-[28px] ">
-            {"> "}<span id="typeIt"></span>
+          <span className="text-[50px] max-sm:text-[45px]"> Muhammad Faisal</span>
+          <span className="text-[#4D5BCE] text-[28px] max-sm:text-[18px]">
+            {"> "}<span id="typeIt" className="max-sm:text-[#43D9AD]"></span>
           </span>
         </div>
-        <div className="mt-10 flex flex-col gap-2">
+        <div className="mt-10 flex flex-col gap-2 max-sm:text-[13px]">
           <div>
             <span className="text-[#607B96]">
               {" // my number "} <br />
@@ -62,7 +62,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-right bg-cover bg-no-repeat -inset-x-[140px] max-sm:hidden">
+      <div className="bg-right bg-cover bg-no-repeat -inset-x-[140px] max-sm:-inset-0">
         <img
           src="/bg-blurs.png"
           alt="Background"

@@ -1,15 +1,18 @@
+import { useAppContext } from "@/context/context";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const { setOpenMenu } = useAppContext();
   const pathname = usePathname();
 
   return (
     <header className="grid grid-cols-4 m-0 p-0 text-[#607B96] text-[14px] sticky top-0 z-[9999] bg-[#011627] w-full">
-      <div className="border-r-2 border-b-2 border-[#1E2D3D] p-3 cursor-default select-none text-[#43D9AD]">
+      <div className="border-r-2 border-b-2 border-[#1E2D3D] p-3 cursor-default select-none text-[#43D9AD] max-sm:col-span-4">
         muhammad-faisal
       </div>
-      <div className="border-b-2 border-[#1E2D3D] col-span-3 flex flex-row justify-between">
+      {/* desktop */}
+      <div className="border-b-2 border-[#1E2D3D] col-span-3 flex flex-row justify-between max-sm:hidden">
         <div className="border-r-2 border-[#1E2D3D] hover:text-white group">
           <a href="/">
             <div className={`py-2.5 px-5 group-hover:cursor-pointer group-hover:border-b-[3px] group-hover:border-[#FEA55F] ${pathname === "/" ? "border-b-[3px] border-[#FEA55F] text-white" : ""}`}>
@@ -38,6 +41,12 @@ export default function Header() {
             </div>
           </Link>
         </div>
+      </div>
+      {/* mobile */}
+      <div onClick={() => setOpenMenu(prev => !prev)} className="absolute top-3 right-3 cursor-pointer sm:hidden">
+        <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0H18V2H0V0ZM0 7H18V9H0V7ZM0 14H18V16H0V14Z" fill="#607B96"/>
+        </svg>
       </div>
     </header>
   );

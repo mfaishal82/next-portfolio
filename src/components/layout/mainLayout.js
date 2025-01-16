@@ -8,19 +8,21 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import React from 'react';
 import { useAppContext } from "@/context/context";
+import {FloatingOverlay} from '@floating-ui/react';
+import Link from "next/link";
 
 export default function MainLayout({ children }) {
-  const { id } = useAppContext();
+  const { id, openMenu, setOpenMenu } = useAppContext();
   const pathname = usePathname();
   return (
     <>
       <div className="m-0 p-0 h-screen">
         <Header />
 
-        <div className="text-white grid grid-cols-4 mt-0 h-[calc(100vh-60px)] text-[14px]">
+        <div className="text-white grid grid-cols-4 max-sm:grid-rows-2 mt-0 h-[calc(100vh-60px)] text-[14px]">
           
           {/* Sidebar */}
-          { pathname !== "/" ? <div className="border-r-2 border-[#1E2D3D] overflow-auto">
+          { pathname !== "/" ? <div className="border-r-2 border-[#1E2D3D] max-sm:col-span-4">
                 {
                     pathname === "/about-me" ? <Sidebar_About /> : 
                     pathname === "/projects" ? <Sidebar_Project/> :
@@ -33,10 +35,40 @@ export default function MainLayout({ children }) {
           }
 
           {/* Main */}
-          <div className="col-span-3">
+          <div className="col-span-3 max-sm:col-span-4">
             {React.cloneElement(children)}
           </div>
 
+          {/* Menu for Mobile */}
+          {openMenu && 
+            <FloatingOverlay>
+              <div onClick={ ()=> setOpenMenu(false) } className="sm:hidden relative w-full h-auto bg-[#011627] text-white mt-10 z-[9999] duration-700 overflow-hidden">
+                <Link href={"/"}>
+                  <div className="border-b-2 border-[#1E2D3D] p-3 cursor-default select-none text-white">
+                    _hello
+                  </div>
+                </Link>
+                
+                <Link href={"/about-me"}>
+                  <div className="border-b-2 border-[#1E2D3D] p-3 cursor-default select-none text-white">
+                    _about-me
+                  </div>
+                </Link>
+
+                <Link href={"/projects"}>
+                  <div className="border-b-2 border-[#1E2D3D] p-3 cursor-default select-none text-white">
+                    _projects
+                  </div>
+                </Link>
+
+                <Link href={"/contact-me"}>
+                  <div className="border-b-2 border-[#1E2D3D] p-3 cursor-default select-none text-white">
+                    _contact-me
+                  </div>
+                </Link>
+              </div>
+            </FloatingOverlay>
+          }
         </div>
         
         <Footer />

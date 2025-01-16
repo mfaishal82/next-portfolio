@@ -55,20 +55,20 @@ export default function Page() {
       <>
        {/* header */}
        <div className="grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96]">
-                <div className="border-r-2 border-[#1E2D3D]">
+              <div className="max-sm:col-span-2 border-r-2 border-[#1E2D3D]">
                 <div className="p-2 pr-5 border-r-2 border-[#1E2D3D] w-[200px] flex flex-row justify-between">
                     contact-to-me
                     <span>
                     x
                     </span>
                 </div>
-                </div>
+              </div>
             </div>
             {/* end header */}
 
             {/* body */}
             <div className="grid grid-cols-2 text-[14px] border-[#1E2D3D] text-[#607B96] h-full">
-                <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5">
+                <div className="flex flex-col max-sm:col-span-2 border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5">
 
                   <form onSubmit={sendEmail} className="w-[80%] self-center">
                     <div className="mb-5">
@@ -98,7 +98,7 @@ export default function Page() {
                   </div>
                 </div>
 
-                <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5">
+                <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5 max-sm:hidden">
                   <div className="self-center">
                       <span className="text-[#C98BDF]">const</span> <span className="text-[#5565E8]">button</span> <span className="text-[#C98BDF]">=</span> <span className="text-[#5565E8]">document.querySelector</span>(<span className="text-[#FEA55F]">"#sendBtn"</span>); 
                       <br />
