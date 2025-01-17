@@ -23,7 +23,7 @@ export default function Page() {
     e.preventDefault();
       emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID)
           .then((result) => {
-              console.log(result.text);
+              // console.log(result.text);
               setStatus('Your message has been sent successfully!');
               // setToastMessage('Message has been sent successfully!');
               // setToastType('success');
