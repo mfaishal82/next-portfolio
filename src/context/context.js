@@ -6,7 +6,7 @@ const AppContext = createContext();
 
 export function AppProvider({ children }) {
     const [section, setSection] = useState('bio');
-    const [id, setId] = useState(0);
+    const [id, setId] = useState();
     const [ openMenu, setOpenMenu ] = useState(false);
     const listProjects = projects;
     // const [test, setTest] = useState('test');

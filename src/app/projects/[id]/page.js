@@ -15,29 +15,21 @@ import Link from "next/link";
 export default function ProjectDetail() {
   const params = useParams();
   const id = Number(params.id);
+  // const slug = params.slug;
   const { listProjects } = useAppContext();
   const [project, setProject] = useState({});
-  // const [img, setImg] = useState('');
+  // console.log(params)
+  // console.log(slug)
 
   useEffect(() => {
     for (let i = 0; i < listProjects.length; i++) {
       if (i === id) {
         setProject(listProjects[i]);
-        // setImg(listProjects[i].image);
-        // console.log(listProjects[i].image);
       }
-      // for (let j = 0; j < project.image.length; j++) {
-      //   setImg(project.image[j]);
-      // }
     }
-
-    // for (let i = 0; i < project.image.length; i++) {
-    //   console.log(project.image[i]);
-    // }
   }, [id, listProjects]);
 
   const img = project.image;
-  // console.log(img[0]);
 
   return (
     <>

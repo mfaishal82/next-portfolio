@@ -2,9 +2,9 @@ export default function Interests() {
   return (
     <>
       {/* header */}
-      <div className="grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96]">
-        <div className="border-r-2 border-[#1E2D3D]">
-          <div className="p-2 pr-5 border-r-2 border-[#1E2D3D] w-[250px] flex flex-row justify-between">
+      <div className="grid grid-cols-2 max-sm:grid-cols-1 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96]">
+            <div className="border-r-2 border-[#1E2D3D]">
+              <div className="p-2 pr-1 w-[200px] border-r-2 border-[#1E2D3D] flex flex-row justify-between">
             interests-and-skills
             <span className="select-none cursor-default">x</span>
           </div>
@@ -13,8 +13,8 @@ export default function Interests() {
       {/* end header */}
 
       {/* body */}
-      <div className="grid grid-cols-2 text-[14px] border-[#1E2D3D] text-[#607B96]">
-        <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5">
+        <div className="grid grid-cols-2 max-sm:grid-cols-1 text-[14px] border-[#1E2D3D] text-[#607B96] h-full">
+          <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5">
           {" // "} I am interested in frontend and backend development,
           specifically in web and mobile application development where I have
           expertise. <br /> <br />
@@ -33,7 +33,7 @@ export default function Interests() {
             {"*/"}
           </div>
         </div>
-        <div className="flex flex-col items-center gap-1 mt-10">
+        <div className="flex flex-col items-center gap-1 mt-10 max-sm:hidden">
             <div className="flex flex-row flex-wrap gap-5">
                 <div className="min-h-10 max-h-10 max-w-10 hover:animate-bounce p-1 bg-[#0c2e49] aspect-square flex items-center justify-center">
                     <svg

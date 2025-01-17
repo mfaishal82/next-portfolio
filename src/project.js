@@ -7,6 +7,7 @@ const projects = [
         image: ["https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928340/portfolio/rnmcghjyuipfre93pyex.png", "https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928338/portfolio/zew38z9dz8hdmmoojljh.png"],
         techStack: "Laravel, PHP, MySQL, HTML, CSS, Bootstrap, AlpineJS",
         framework: "laravel",
+        slug: "the-fast-news",
         type: "web"
     },
     {
@@ -17,6 +18,7 @@ const projects = [
         image: ["https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928333/portfolio/ekjbqoa4jh3uwvdlubuv.png", "https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928334/portfolio/ozmtpvam5yx3w6b8ej8x.png"],
         techStack: "PHP, MySQL, HTML, Tailwind, AlpineJS",
         framework: "laravel",
+        slug: "the-library",
         type: "web"
     },
     {
@@ -27,6 +29,7 @@ const projects = [
         image: ["https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928344/portfolio/yswpwe8oxofyzwmrwfr7.png", "https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928336/portfolio/sbsepkp9hnaeca0mesgu.png"],
         techStack: "Semantic HTML, CSS, JavaScript",
         framework: "html",
+        slug: "mini-project",
         type: "web"
     },
     {
@@ -37,6 +40,7 @@ const projects = [
         image: ["https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928332/portfolio/oun76dadjvzw7jtnclkl.png"],
         techStack: "React-Native, Expo, Expo location, Axios, Mp3Quran API, Aladhan API",
         framework: "react",
+        slug: "tasmi-app",
         type: "mobile"
     },
     {
@@ -48,6 +52,7 @@ const projects = [
         image: ["https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928335/portfolio/tj63ahx60cwpqcng0nwi.png", "https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928337/portfolio/d6olnrolqkpibxl7xrv9.png"],
         techStack: "GraphQL, MongoDB, Node.js, React Native, Expo, Expo Location, Expo Map, HercAI API, Google Place API",
         framework: "react",
+        slug: "medichat-rx",
         type: "mobile"
     },
     {
@@ -58,6 +63,7 @@ const projects = [
         image: ["https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928335/portfolio/lhuzp3g3k4ti8raokoav.png", "https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928336/portfolio/hyyj2xsu2zn3s0vevwbh.png"],
         techStack: "Javascript, Tailwind CSS, NextJS, Vercel",
         framework: "next",
+        slug: "my-ecommerce-app",
         type: "web"
     },
     {
@@ -69,6 +75,7 @@ const projects = [
         image: ["https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928334/portfolio/qngcbhutknyx3ul5gj7d.png", "https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928335/portfolio/itchqjuamxvjvh651i2r.png"],
         techStack: "Javascript, HTML & CSS, React JS, Firebase",
         framework: "react",
+        slug: "tic-tac-toe",
         type: "web"
     },
     {
@@ -79,6 +86,7 @@ const projects = [
         image: ["https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928338/portfolio/b2cqtkxemfecuhdzz7be.png"],
         techStack: "Javascript, React Native, MongoDb, Apollo server, Expo, Android Studio",
         framework: "react",
+        slug: "-my-social-media",
         type: "mobile"
     },
     {
@@ -89,6 +97,7 @@ const projects = [
         image: ["https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928336/portfolio/dnoxtwpwndl49kkhy8jc.png", "https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928333/portfolio/twgnsb9x2dgva7lmzo3q.png"],
         techStack: "Javascript, HTML & CSS, Express.js, PostgreSQL",
         framework: "express",
+        slug: "edutech",
         type: "web"
     },
     {
@@ -99,6 +108,7 @@ const projects = [
         image: ["https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928335/portfolio/xy1lp1lulh3w45ptevmq.png", "https://res.cloudinary.com/dt1e1fd6s/image/upload/v1736928336/portfolio/distifaidqkbiadgwi47.png"],
         techStack: "Javascript, HTML & CSS, Express.js, PostgreSQL",
         framework: "express",
+        slug: "fact-guard",
         type: "web"
     },
 ];

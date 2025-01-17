@@ -12,7 +12,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-row items-center h-full relative max-sm:absolute max-sm:top-10 overflow-auto mb-24 max-sm:p-7">
+    <div className="flex flex-row items-center h-full relative max-sm:absolute max-sm:top-3 overflow-auto mb-24 max-sm:p-7">
       <div className="h-full flex flex-col justify-center">
         <div className="flex flex-col justify-center cursor-default select-none">
           Hi all. I am

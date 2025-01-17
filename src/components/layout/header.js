@@ -8,9 +8,14 @@ export default function Header() {
 
   return (
     <header className="grid grid-cols-4 m-0 p-0 text-[#607B96] text-[14px] sticky top-0 z-[9999] bg-[#011627] w-full">
-      <div className="border-r-2 border-b-2 border-[#1E2D3D] p-3 cursor-default select-none text-[#43D9AD] max-sm:col-span-4">
+      <div className="flex flex-row items-center gap-2 border-r-2 border-b-2 border-[#1E2D3D] p-3 cursor-default select-none text-[#43D9AD] max-sm:col-span-4">
         muhammad-faisal
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#43D9AD] opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2aac85]"></span>
+        </span>
       </div>
+
       {/* desktop */}
       <div className="border-b-2 border-[#1E2D3D] col-span-3 flex flex-row justify-between max-sm:hidden">
         <div className="border-r-2 border-[#1E2D3D] hover:text-white group">

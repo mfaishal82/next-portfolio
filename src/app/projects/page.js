@@ -24,7 +24,7 @@ export default function Page() {
         {/* list project */}
         {listProjects.map((project, index) => (
           <div key={index} className="flex flex-col hover:scale-105 hover:duration-500 group">
-            <span className="group-hover:text-[#43D9AD]">project-{project.type} // _{project.title}</span>
+            <div className="group-hover:text-[#43D9AD] max-sm:self-center">project-{project.type} // _{project.title}</div>
             <div className="w-[370px] h-[315px] rounded-[15px] bg-[#011221] border border-[#1C2B3A] grid grid-rows-2 ">
               <div className="bg-white rounded-t-[15px] relative">
                 <img src={`${project.image[0]}`} className="bg-contain rounded-t-[15px]" />

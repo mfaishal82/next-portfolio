@@ -9,9 +9,9 @@ export default function Page() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-  const [showToast, setShowToast] = useState(false);
-  const [toastMessage, setToastMessage] = useState('');
-  const [toastType, setToastType] = useState('');
+  // const [showToast, setShowToast] = useState(false);
+  // const [toastMessage, setToastMessage] = useState('');
+  // const [toastType, setToastType] = useState('');
   const [status, setStatus] = useState('');
   const [formData, setFormData] = useState({
       from_name: name,
