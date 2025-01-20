@@ -10,6 +10,7 @@ import React from 'react';
 import { useAppContext } from "@/context/context";
 import {FloatingOverlay} from '@floating-ui/react';
 import Link from "next/link";
+import MobileMenu from "./mobileMenu";
 
 export default function MainLayout({ children }) {
   const { id, openMenu, setOpenMenu } = useAppContext();
@@ -25,9 +26,10 @@ export default function MainLayout({ children }) {
           { pathname !== "/" ? <div className="border-r-2 border-[#1E2D3D] max-sm:col-span-4">
                 {
                     pathname === "/about-me" ? <Sidebar_About /> : 
-                    pathname === "/projects" ? <Sidebar_Project/> :
-                    pathname === `/projects/${id}` ? <Sidebar_Project/> :
-                    pathname === "/contact-me" ? <Sidebar_Contact/> : null
+                    pathname === "/contact-me" ? <Sidebar_Contact/> :
+                    pathname === "/projects" || `/projects/${id}` ? <Sidebar_Project/> :
+                    null
+                    // pathname === `/projects/${id}` ? <Sidebar_Project/> :
                 }
             </div>
           : 
@@ -36,38 +38,12 @@ export default function MainLayout({ children }) {
 
           {/* Main */}
           <div className="col-span-3 max-sm:col-span-4">
-            {React.cloneElement(children)}
+            {children}
           </div>
 
           {/* Menu for Mobile */}
           {openMenu && 
-            <FloatingOverlay>
-              <div onClick={ ()=> setOpenMenu(false) } className="sm:hidden relative w-full rounded-b-sm border border-blue-300 h-auto bg-[#011627] text-white mt-10 z-[9999] duration-700 overflow-hidden">
-                <Link href={"/"}>
-                  <div className={`border-b-2 border-[#1E2D3D] p-3 cursor-default select-none ${pathname === "/" ? "text-[#43D9AD]" : 'text-white'}`}>
-                    _hello
-                  </div>
-                </Link>
-                
-                <Link href={"/about-me"}>
-                  <div className={`border-b-2 border-[#1E2D3D] p-3 cursor-default select-none ${pathname === "/about-me" ? "text-[#43D9AD]" : 'text-white'}`}>
-                    _about-me
-                  </div>
-                </Link>
-
-                <Link href={"/projects"}>
-                  <div className={`border-b-2 border-[#1E2D3D] p-3 cursor-default select-none ${pathname === "/projects" ? "text-[#43D9AD]" : 'text-white'}`}>
-                    _projects
-                  </div>
-                </Link>
-
-                <Link href={"/contact-me"}>
-                  <div className={`border-b-2 border-[#1E2D3D] p-3 cursor-default select-none ${pathname === "/contact-me" ? "text-[#43D9AD]" : 'text-white'}`}>
-                    _contact-me
-                  </div>
-                </Link>
-              </div>
-            </FloatingOverlay>
+            <MobileMenu setOpenMenu={setOpenMenu} />
           }
         </div>
         

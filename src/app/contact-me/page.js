@@ -49,7 +49,7 @@ export default function Page() {
     day: 'numeric',
   };
 
-  console.log(email, name, message);
+  // console.log(email, name, message);
 
     return (
       <>

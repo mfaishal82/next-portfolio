@@ -163,12 +163,12 @@ export default function Certificates() {
                 </div>
 
                 <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5 hover:scale-105 hover:duration-500 max-sm:hidden">
-                    { show === "java" && <img src="java.png" />  }
-                    { show === "js" && <img src="js.png" />}            
-                    { show === "prob" && <img src="prob.png" />}            
-                    { show === "css" && <img src="css.png" />}            
-                    { show === "sql" && <img src="sql.png" />}            
-                    { show === "react" && <img src="react.png" />}            
+                    { show === "java" && <img src="java.png" loading="lazy" />  }
+                    { show === "js" && <img src="js.png" loading="lazy" />}            
+                    { show === "prob" && <img src="prob.png" loading="lazy" />}            
+                    { show === "css" && <img src="css.png" loading="lazy" />}            
+                    { show === "sql" && <img src="sql.png" loading="lazy" />}            
+                    { show === "react" && <img src="react.png" loading="lazy" />}            
                 </div>
             </div>
         </>

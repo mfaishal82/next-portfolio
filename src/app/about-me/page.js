@@ -9,7 +9,7 @@ import { useState } from "react"
 
 export default function Page() {
   const { section, test } = useAppContext();
-  console.log(test, "about-me/page.js")
+  // console.log(test, "about-me/page.js")
   
   return (
     <>

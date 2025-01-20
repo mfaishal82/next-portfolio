@@ -55,7 +55,7 @@ export default function ProjectDetail() {
         <div className="w-[70%] max-sm:w-full border border-[#1E2D3D] rounded-xl max-sm:relative max-sm:z-0">
           <Swiper
             navigation={true}
-            loop={true}
+            // loop={true}
             centeredSlides={true}
             autoplay={{
               delay: 1000,
@@ -77,7 +77,7 @@ export default function ProjectDetail() {
 
         <div className="w-full border-t border-[#1E2D3D]">
           /* <br />
-          <span className="ml-2 text-[#43D9AD] "> * Project {project.type} / _{project.title} / {project.framework}{" "} </span> <br />
+          <span className="ml-2 text-[#43D9AD] "> *  _{project.title} / {project.framework}{" "} </span> <br />
           <span className="ml-2 "> • {project.date}  </span> <br />
           <span className="ml-2 "> • {project.description}  </span> <br />
           <span className="ml-2 "> • tech-stack: {project.techStack}  </span> <br />

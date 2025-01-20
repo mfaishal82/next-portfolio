@@ -4,7 +4,7 @@ import { useAppContext } from "@/context/context";
 import Link from "next/link";
 
 export default function Page() {
-  const { listProjects, setId } = useAppContext()
+  const { listProjects, setId, setProjectActive } = useAppContext()
 
   return (
     <>
@@ -27,17 +27,16 @@ export default function Page() {
             <div className="group-hover:text-[#43D9AD] max-sm:self-center">project-{project.type} // _{project.title}</div>
             <div className="w-[370px] h-[315px] rounded-[15px] bg-[#011221] border border-[#1C2B3A] grid grid-rows-2 ">
               <div className="bg-white rounded-t-[15px] relative">
-                <img src={`${project.image[0]}`} className="bg-contain rounded-t-[15px]" />
+                <img src={`${project.image[0]}`} className="bg-contain rounded-t-[15px]" loading="eager" />
                 <IconFramework project={project} />
-                
               </div>
 
-              <div className="p-8 z-[20] bg-[#011221] rounded-b-[15px] flex flex-col justify-between h-full">
+              <div className="p-8 z-[10] bg-[#011221] rounded-b-[15px] flex flex-col justify-between h-full">
                 {(project.description).substring(0, 100)}
                 <br />
                 <div className="flex flex-rows justify-between">
                   <Link href={`projects/${index}`} >
-                    <button onClick={() => setId(index)} className="mt-3 hover:duration-500 bg-[#1C2B3A] text-white hover:bg-[#607B96] hover:text-[#1E2D3D] text-[14px] py-1 px-3 rounded-md">
+                    <button onClick={() => {setId(index); setProjectActive(project.title)}} className="mt-3 hover:duration-500 bg-[#1C2B3A] text-white hover:bg-[#607B96] hover:text-[#1E2D3D] text-[14px] py-1 px-3 rounded-md">
                       view-project
                     </button>
                   </Link>

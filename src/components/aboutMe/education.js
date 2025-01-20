@@ -25,7 +25,7 @@ export default function Education() {
               {/* Date */}
               <div className="w-20 text-end">
                 <span className="text-xs text-gray-500 dark:text-neutral-400">
-                  2019-2023
+                  2019 - 2023
                 </span>
               </div>
 
@@ -106,8 +106,8 @@ export default function Education() {
         </div>
 
         <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5 hover:scale-105 hover:duration-500 max-sm:hidden">
-            { show === "NC" && <img src="NC.png" />  }
-            { show === "HCK" && <img src="HCK.png" />}            
+            { show === "NC" && <img src="NC.png" loading="lazy" />  }
+            { show === "HCK" && <img src="HCK.png" loading="lazy" />}            
         </div>
       </div>
     </>

@@ -4,7 +4,7 @@ export default function Sidebar_Contact() {
         <>
             {/* contact */}
             <div>
-                <div className="border-b-2 border-[#1E2D3D] p-2 text-white flex flex-row gap-2 items-center cursor-default ">
+                <div className="border-b-2 max-sm:border-b-0 border-[#1E2D3D] p-2 text-white flex flex-row gap-2 items-center cursor-default ">
                     <svg
                     width="9"
                     height="7"

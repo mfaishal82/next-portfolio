@@ -1,15 +1,9 @@
 "use client"
-import TypeIt from "typeit";
+// import TypeIt from "typeit";
+import TypeIt from "typeit-react";
 import { useEffect } from "react";
 
 export default function Home() {
-  useEffect(() => {
-    new TypeIt("#typeIt", {
-      strings: ["Fullstack Developer"],
-      speed: 100,
-      waitUntilVisible: true,
-    }).go();
-  }, []);
 
   return (
     <div className="flex flex-row items-center h-full relative max-sm:absolute max-sm:top-3 overflow-auto mb-24 max-sm:p-7">
@@ -18,7 +12,15 @@ export default function Home() {
           Hi all. I am
           <span className="text-[50px] max-sm:text-[45px]"> Muhammad Faisal</span>
           <span className="text-[#4D5BCE] text-[28px] max-sm:text-[18px]">
-            {"> "}<span id="typeIt" className="max-sm:text-[#43D9AD]"></span>
+            {"> "}<span className="max-sm:text-[#43D9AD]">
+            <TypeIt
+              options={{
+                strings: ["Fullstack Developer"],
+                speed: 100,
+                waitUntilVisible: true,
+              }}
+            ></TypeIt>
+            </span>
           </span>
         </div>
         <div className="mt-10 flex flex-col gap-2 max-sm:text-[13px]">
@@ -62,11 +64,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-right bg-cover bg-no-repeat -inset-x-[140px] max-sm:-inset-0">
+      <div className="bg-right bg-cover bg-no-repeat -inset-x-[140px] max-sm:-inset-x-0">
         <img
           src="/bg-blurs.png"
           alt="Background"
-          className="fixed right-0 inset-y-36 w-[50%] h-[70%] select-none"
+          className="fixed right-0 inset-y-36 w-[50%] max-sm:left-36 max-sm:w-[70%] max-sm:right-0 h-[70%] select-none"
+          loading="eager"
         />
       </div>
     </div>

@@ -49,7 +49,7 @@ export default function Experience() {
                 </div>
 
                 <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5 max-sm:hidden">
-                    { show === "work" && <img src="work.png" />  }
+                    { show === "work" && <img src="work.png" loading="lazy"/>  }
                 </div>
             </div>
         </>

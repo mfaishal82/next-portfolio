@@ -2,7 +2,7 @@ export default function IconFramework({ project }) {
   return (
     <>
       {project.framework === "react" && (
-        <div className="absolute top-3 right-3 z-10 bg-[#86E1F9] rounded-sm p-1 ">
+        <div className="absolute top-3 right-3 z-[1] bg-[#86E1F9] rounded-sm p-1 ">
           <svg
             width="19"
             height="17"
@@ -18,7 +18,7 @@ export default function IconFramework({ project }) {
         </div>
       )}
       {project.framework === "html" && (
-        <div className="absolute top-3 right-3 z-10 bg-[#86E1F9] rounded-sm p-1 ">
+        <div className="absolute top-3 right-3 [1] bg-[#86E1F9] rounded-sm p-1 ">
           <svg
             width="18"
             height="20"
@@ -34,7 +34,7 @@ export default function IconFramework({ project }) {
         </div>
       )}
       {project.framework === "laravel" && (
-        <div className="absolute top-3 right-3 z-10 bg-[#86E1F9] rounded-sm p-1 ">
+        <div className="absolute top-3 right-3 [1] bg-[#86E1F9] rounded-sm p-1 ">
           <svg
             width="18"
             height="18"
@@ -50,7 +50,7 @@ export default function IconFramework({ project }) {
         </div>
       )}
       {project.framework === "next" && (
-        <div className="absolute top-3 right-3 z-10 bg-[#86E1F9] rounded-sm p-1 ">
+        <div className="absolute top-3 right-3 [1] bg-[#86E1F9] rounded-sm p-1 ">
           <svg
             width="18"
             height="18"
@@ -66,7 +66,7 @@ export default function IconFramework({ project }) {
         </div>
       )}
       {project.framework === "express" && (
-        <div className="absolute top-3 right-3 z-10 bg-[#86E1F9] rounded-sm p-1 ">
+        <div className="absolute top-3 right-3 [1] bg-[#86E1F9] rounded-sm p-1 ">
           <svg
             width="16"
             height="16"
