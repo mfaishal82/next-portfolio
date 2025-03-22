@@ -1,5 +1,16 @@
 const projects = [
     {
+        title: "Simple-DonasiKu",
+        description: "A simple web-based for donation platform like Saweria",
+        url: "https://github.com/mfaishal82/simple-donasiku",
+        date: "March 2025",
+        image: ["https://res.cloudinary.com/dt1e1fd6s/image/upload/v1742687064/portfolio/aum9mmy19eqibffdogmr.png", "https://res.cloudinary.com/dt1e1fd6s/image/upload/v1742687070/portfolio/yty5gjh2jpivd6xfpzkq.png", "https://res.cloudinary.com/dt1e1fd6s/image/upload/v1742687077/portfolio/tal40y0cth5aezmacf9n.png", "https://res.cloudinary.com/dt1e1fd6s/image/upload/v1742687328/portfolio/tes4obkrwx3gbdb0wu4e.png"],
+        techStack: "Laravel, PHP, MySQL, HTML, CSS, Bootstrap, Xendit, Mailtrap",
+        framework: "laravel",
+        slug: "simple-donasi",
+        type: "web"
+    },
+    {
         title: "The Fast News",
         description: "A web-based online-media digital news paper app for the final project assignment of Nusacodes",
         url: "https://github.com/mfaishal82/media-online",

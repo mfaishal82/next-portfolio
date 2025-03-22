@@ -9,9 +9,16 @@ export function AppProvider({ children }) {
     const [id, setId] = useState();
     const [ openMenu, setOpenMenu ] = useState(false);
     const [projectActive, setProjectActive] = useState('');
+    const [listProjects, setListProjects] = useState([]);
     
-    const listProjects = projects;
-    
+    useEffect(() => {
+        const fetchProjects = async () => {
+            const res = await fetch("/api/list-projects");
+            const data = await res.json();
+            setListProjects(data.default);
+        };
+        fetchProjects();
+    }, []);
 
     const value = {
         section,

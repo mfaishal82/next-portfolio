@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Navigation } from "swiper/modules";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function ProjectDetail() {
   const params = useParams();
@@ -18,13 +19,17 @@ export default function ProjectDetail() {
   // const slug = params.slug;
   const { listProjects } = useAppContext();
   const [project, setProject] = useState({});
-  // console.log(params)
-  // console.log(slug)
+  const router = useRouter();
+  // console.log(id)
 
   useEffect(() => {
     for (let i = 0; i < listProjects.length; i++) {
       if (i === id) {
-        setProject(listProjects[i]);
+        if (isNaN(id) || id < 0 || id >= listProjects.length) {
+          router.push('/projects');
+        } else {
+          setProject(listProjects[id]);
+        }
       }
     }
   }, [id, listProjects]);
