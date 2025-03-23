@@ -1,5 +1,4 @@
 "use client"
-import projects from '@/project';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 const AppContext = createContext();
@@ -27,8 +26,6 @@ export function AppProvider({ children }) {
         id, setId,
         openMenu, setOpenMenu,
         projectActive, setProjectActive
-        // test,
-        // setTest
     };
 
     return (

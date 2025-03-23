@@ -1,16 +1,25 @@
 import { useAppContext } from "@/context/context";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import tippy from "tippy.js";
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/themes/light.css';
 
 export default function Header() {
   const { openMenu, setOpenMenu, setProjectActive } = useAppContext();
   const pathname = usePathname();
 
+  tippy('#work', {
+    content: "I'm open to work!",
+    placement: 'bottom',
+    theme: 'light-border',
+  });
+
   return (
     <header className="grid grid-cols-4 m-0 p-0 text-[#607B96] text-[14px] sticky top-0 z-[9999] bg-[#011627] w-full">
       <div className="flex flex-row items-center gap-2 border-r-2 border-b-2 max-sm:border-r-none border-[#1E2D3D] p-3 cursor-default select-none text-[#43D9AD] max-sm:col-span-4">
         muhammad-faisal
-        <span className="relative flex h-2 w-2">
+        <span className="relative flex h-2 w-2 text-white" id="work">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#43D9AD] opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2aac85]"></span>
         </span>

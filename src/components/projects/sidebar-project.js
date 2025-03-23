@@ -8,7 +8,7 @@ export default function Sidebar_Project() {
   const { listProjects, projectActive, setProjectActive } = useAppContext()
 
   return (
-    <>
+    <div className="sticky top-12">
       <div className="border-b-2 border-[#1E2D3D] text-white flex flex-row gap-2 p-2 items-center cursor-default">
         <svg
           width="9"
@@ -98,6 +98,6 @@ export default function Sidebar_Project() {
           ))
         }
       </div>
-    </>
+    </div>
   );
 }

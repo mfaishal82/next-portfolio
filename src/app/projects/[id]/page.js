@@ -52,12 +52,12 @@ export default function ProjectDetail() {
       {/* end header */}
 
       {/* body */}
-      <div className="flex flex-col gap-3 flex-wrap p-5 pt-2 pb-16 text-[14px] border-[#1E2D3D] text-[#607B96] h-full w-full">
-        <h1>
+      <div className="flex flex-col gap-3 flex-wrap p-0 pt-2 pb-7 text-[14px] border-[#1E2D3D] text-[#607B96] h-full w-full">
+        <h1 className="p-4 py-2 cursor-default select-none">
           {" "}
           // Project {project.type} / _{project.title} / {project.framework}{" "}
         </h1>
-        <div className="w-[70%] max-sm:w-full border border-[#1E2D3D] rounded-xl max-sm:relative max-sm:z-0">
+        <div className="w-full p-4 rounded-xl max-sm:relative max-sm:z-0">
           <Swiper
             navigation={true}
             // loop={true}
@@ -80,7 +80,7 @@ export default function ProjectDetail() {
           </Swiper>
         </div>
 
-        <div className="w-full mt-8 border-t border-[#1E2D3D] pt-6 space-y-4 -m-4">
+        <div className="w-full mt-8 border-t border-[#1E2D3D] pt-6 space-y-4">
           {/* Project Info Section */}
           <div className="bg-[#011221] rounded-lg p-6 border border-[#1E2D3D]">
             <div className="space-y-3">
@@ -101,9 +101,9 @@ export default function ProjectDetail() {
                 </div>
 
                 {/* Description */}
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 text-white">
                   <span className="text-[#607B96]">•</span>
-                  <p className="text-[#607B96] leading-relaxed">{project.description}</p>
+                  <p className="leading-relaxed">{project.description}</p>
                 </div>
 
                 {/* Tech Stack */}
