@@ -5,11 +5,8 @@ import Sidebar_Project from "../projects/sidebar-project";
 import Sidebar_Contact from "../contact/sidebar-contact";
 import Footer from "./footer";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 import React from 'react';
 import { useAppContext } from "@/context/context";
-import {FloatingOverlay} from '@floating-ui/react';
-import Link from "next/link";
 import MobileMenu from "./mobileMenu";
 
 export default function MainLayout({ children }) {
@@ -17,10 +14,10 @@ export default function MainLayout({ children }) {
   const pathname = usePathname();
   return (
     <>
-      <div className="m-0 p-0 h-screen">
+      <div className="min-h-screen flex flex-col w-full">
         <Header />
 
-        <div className="text-white grid grid-cols-4 max-sm:flex max-sm:flex-col mt-0 h-[calc(100vh-60px)] text-[14px]">
+        <div className="flex-1 text-white grid grid-cols-4 max-sm:flex max-sm:flex-col mt-0 text-[14px]">
           
           {/* Sidebar */}
           { pathname !== "/" ? <div className="border-r-2 border-[#1E2D3D] max-sm:col-span-4">
@@ -37,7 +34,7 @@ export default function MainLayout({ children }) {
           }
 
           {/* Main */}
-          <div className="col-span-3 max-sm:col-span-4">
+          <div className="col-span-3 max-sm:col-span-4 z-0">
             {children}
           </div>
 
