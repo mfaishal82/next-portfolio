@@ -23,12 +23,9 @@ export default function Interests() {
           <div>
             {"/*"} <br />
             <div><span className="text-[#43D9AD]">Language:</span> JavaScript, TypeScript, PHP (explore)</div>
-            <div><span className="text-[#43D9AD]">Front End:</span> HTML, Tailwind/CSS, EJS, React JS, React Native, NextJS,</div>
-            Laravel 
-            <div><span className="text-[#43D9AD]">Deploy:</span> AWS EC2, Google Cloud Engine, Microsoft Azure, FireBase,</div>
-            Vercel 
-            <div><span className="text-[#43D9AD]">Back End:</span> Node JS, Express, Sequelize, PostgreSQL, MySQL, Rest API,</div>
-            MongoDB, Redis 
+            <div><span className="text-[#43D9AD]">Front End:</span> HTML, Tailwind/CSS, EJS, React JS, React Native, NextJS, Laravel </div>
+            <div><span className="text-[#43D9AD]">Deploy:</span> AWS EC2, Google Cloud Engine, Microsoft Azure, FireBase, Vercel</div>
+            <div><span className="text-[#43D9AD]">Back End:</span> Node JS, PHP, Express, Sequelize, PostgreSQL, MySQL, Rest API, MongoDB, Redis</div>
             <div><span className="text-[#43D9AD]">Interests:</span> Front End Developer, Back End Developer <br /></div>
             {"*/"}
           </div>

@@ -39,7 +39,7 @@ export default function ProjectDetail() {
   return (
     <>
       {/* header */}
-      <div className="grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96]">
+      <div className="w-full grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96]">
         <div className="">
           <div className="p-2 pr-3 border-r-2 border-[#1E2D3D] w-[50%] flex flex-row justify-between max-sm:col-span-2 max-sm:w-full">
             _{project.title}
@@ -52,12 +52,12 @@ export default function ProjectDetail() {
       {/* end header */}
 
       {/* body */}
-      <div className="flex flex-col gap-3 flex-wrap p-0 pt-2 pb-7 text-[14px] border-[#1E2D3D] text-[#607B96] h-full w-full">
-        <h1 className="p-4 py-2 cursor-default select-none">
+      <div className="flex flex-col gap-1 max-sm:gap-1 flex-wrap p-0 pt-2 pb-7 text-[14px] border-[#1E2D3D] text-[#607B96] h-full w-full">
+        <h1 className="p-4 max-sm:p-1.5 py-2 cursor-default select-none">
           {" "}
           // Project {project.type} / _{project.title} / {project.framework}{" "}
         </h1>
-        <div className="w-full p-4 rounded-xl max-sm:relative max-sm:z-0">
+        <div className="w-full p-4 pb-0 max-sm:p-0.5 rounded-xl max-sm:relative max-sm:z-0">
           <Swiper
             navigation={true}
             // loop={true}
@@ -80,16 +80,20 @@ export default function ProjectDetail() {
           </Swiper>
         </div>
 
-        <div className="w-full mt-8 border-t border-[#1E2D3D] pt-6 space-y-4">
+        <div className="w-full mt-1 p-6 bg-[#011221] rounded-sm max-sm:mt-3 border-t border-[#1E2D3D] space-y-4">
           {/* Project Info Section */}
-          <div className="bg-[#011221] rounded-lg p-6 border border-[#1E2D3D]">
+          <div>
             <div className="space-y-3">
               {/* Title & Framework */}
-              <div className="flex items-center space-x-2 text-[#43D9AD] font-mono">
-                <span className="text-[#607B96]">*/</span>
-                <h2 className="text-lg">_{project.title}</h2>
-                <span className="text-[#607B96]">/</span>
-                <span>{project.framework}</span>
+              <div className="flex flex-row flex-wrap items-center space-x-2 text-[#43D9AD] font-mono">
+                <div className="flex flex-row flex-wrap items-center">
+                  <span className="text-[#607B96]">*/</span>
+                  <h2 className="text-lg ml-1.5">_{project.title}</h2>
+                </div>
+                <div className="flex flex-row flex-wrap items-center">
+                  <span className="text-[#607B96]">/</span>
+                  <span>{project.framework}</span>
+                </div>
               </div>
 
               {/* Project Details */}

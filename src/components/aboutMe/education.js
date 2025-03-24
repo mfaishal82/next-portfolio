@@ -19,13 +19,13 @@ export default function Education() {
       {/* body */}
       <div className="grid grid-cols-2 max-sm:grid-cols-1 text-[14px] border-[#1E2D3D] text-[#607B96] h-full">
           <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5">
-          <div className="ml-5 mt-5">
+          <div className="ml-5 max-sm:ml-1 mt-5">
             {/* 3 */}
-            <div className="flex gap-x-3">
+            <div className="flex gap-x-3 max-sm:gap-x-1.5">
               {/* Date */}
               <div className="w-20 text-end">
                 <span className="text-xs text-gray-500 dark:text-neutral-400">
-                  2019 - 2023
+                  2019-<br/>2023
                 </span>
               </div>
 

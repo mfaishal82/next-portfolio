@@ -9,21 +9,21 @@ export default function Page() {
   return (
     <>
       {/* header */}
-      <div className="grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96] bg-[#011627]">
+      <div className="w-full grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96] bg-[#011627]">
         <div className="">
-          <div className="p-3 pr-6 border-r-2 border-[#1E2D3D] w-[220px] flex flex-row justify-between items-center hover:bg-[#1E2D3D] transition-colors">
+          <div className="p-3 py-2 pr-6 border-r-2 border-[#1E2D3D] w-[220px] flex flex-row justify-between items-center hover:bg-[#1E2D3D] transition-colors">
             <span className="font-medium">list-projects</span>
-            <a href="/projects" className="hover:text-[#43D9AD] transition-colors">
-              <span className="cursor-pointer">&times;</span>
-            </a>
+            <Link href="/" className="hover:text-[#d94343] transition-colors">
+              <span className="cursor-pointer text-[14px]">x</span>
+            </Link>
           </div>
         </div>
       </div>
 
       {/* body */}
-      <div className="flex flex-row flex-wrap gap-8 p-8 pb-16 items-start justify-center text-[14px] border-[#1E2D3D] text-[#607B96] min-h-screen bg-[#011627]">
+      <div className="w-full flex flex-row flex-wrap gap-8 p-8 pb-16 items-start justify-center text-[14px] border-[#1E2D3D] text-[#607B96] min-h-screen bg-[#011627]">
         {listProjects.map((project, index) => (
-          <div key={index} className="flex flex-col transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+          <div key={index} className="max-w-[90%] flex flex-col group transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
             <div className="text-[#607B96] mb-2 font-mono tracking-wide max-sm:self-center group-hover:text-[#43D9AD] transition-colors">
               project-{project.type} // _{project.title}
             </div>
