@@ -113,7 +113,7 @@ export default function ProjectDetail() {
                 {/* Tech Stack */}
                 <div className="flex items-center space-x-2">
                   <span className="text-[#607B96]">•</span>
-                  <span className="text-[#607B96]">tech-stack:</span>
+                  <span className="text-[#607B96] whitespace-nowrap">tech-stack:</span>
                   <div className="flex flex-wrap gap-2">
                     {project.techStack?.split(',').map((tech, index) => (
                       <span 

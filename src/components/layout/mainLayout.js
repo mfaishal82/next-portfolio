@@ -17,7 +17,7 @@ export default function MainLayout({ children }) {
       <div className="min-h-screen flex flex-col w-full">
         <Header />
 
-        <div className="flex-1 text-white grid grid-cols-4 max-sm:flex max-sm:flex-col mt-0 text-[14px]">
+        <div className="flex-1 text-white grid grid-cols-4 max-sm:flex pb-14 max-sm:flex-col mt-0 text-[14px]">
           
           {/* Sidebar */}
           { pathname !== "/" ? <div className="border-r-2 border-[#1E2D3D] max-sm:border-none max-sm:col-span-4">
