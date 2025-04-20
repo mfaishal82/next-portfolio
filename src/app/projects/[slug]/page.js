@@ -15,24 +15,25 @@ import { useRouter } from "next/navigation";
 
 export default function ProjectDetail() {
   const params = useParams();
-  const id = Number(params.id);
-  // const slug = params.slug;
+  const slug = params.slug;
   const { listProjects } = useAppContext();
   const [project, setProject] = useState({});
   const router = useRouter();
-  // console.log(id)
 
   useEffect(() => {
-    for (let i = 0; i < listProjects.length; i++) {
-      if (i === id) {
-        if (isNaN(id) || id < 0 || id >= listProjects.length) {
-          router.push('/projects');
-        } else {
-          setProject(listProjects[id]);
-        }
-      }
+    const foundProject = listProjects.find((proj) => proj.slug === slug);
+    if (!foundProject) {
+      router.push('/projects');
+    } else {
+      setProject(foundProject);
     }
-  }, [id, listProjects]);
+  }, [slug, listProjects, router]);
+
+  useEffect(() => {
+    if (project.title) {
+      document.title = project.title + " - Muhammad Faisal";
+    }
+  }, [project.title]);
 
   const img = project.image;
 
@@ -112,7 +113,6 @@ export default function ProjectDetail() {
 
                 {/* Tech Stack */}
                 <div className="flex items-center space-x-2">
-                  <span className="text-[#607B96]">•</span>
                   <span className="text-[#607B96] whitespace-nowrap">tech-stack:</span>
                   <div className="flex flex-wrap gap-2">
                     {project.techStack?.split(',').map((tech, index) => (

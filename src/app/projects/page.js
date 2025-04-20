@@ -1,9 +1,14 @@
-'use client'
+"use client"
+import { useEffect } from "react";
 import IconFramework from "@/components/projects/iconFramwork";
 import { useAppContext } from "@/context/context";
 import Link from "next/link";
 
 export default function Page() {
+  useEffect(() => {
+    document.title = "Projects - Muhammad Faisal";
+  }, []);
+
   const { listProjects, setId, setProjectActive } = useAppContext()
 
   return (
@@ -41,7 +46,7 @@ export default function Page() {
               <div className="p-6 bg-[#011221] rounded-b-[15px] flex flex-col justify-between h-[50%]">
                 <p className="text-[#607B96] line-clamp-3">{project.description}</p>
                 <div className="flex flex-row justify-between mt-4 gap-3">
-                  <Link href={`projects/${index}`}>
+                  <Link href={`projects/${project.slug}`}>
                     <button 
                       onClick={() => {setId(index); setProjectActive(project.title)}} 
                       className="transition-all duration-300 bg-[#1C2B3A] text-white hover:bg-[#43D9AD] hover:text-[#011627] text-[14px] py-2 px-4 rounded-lg font-medium"

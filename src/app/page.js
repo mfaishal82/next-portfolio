@@ -4,6 +4,9 @@ import TypeIt from "typeit-react";
 import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "Home - Muhammad Faisal";
+  }, []);
 
   return (
     <div className="flex flex-row items-center h-full relative max-sm:absolute max-sm:top-3 overflow-auto mb-24 max-sm:p-7">

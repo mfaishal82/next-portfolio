@@ -1,13 +1,18 @@
 "use client"
+import { useEffect } from "react";
 import Bio from "@/components/aboutMe/bio"
 import Certificates from "@/components/aboutMe/certificates";
 import Education from "@/components/aboutMe/education";
 import Experience from "@/components/aboutMe/experience";
-import Interests from "@/components/aboutMe/interests"
+import Interests from "@/components/aboutMe/interests";
 import { useAppContext } from "@/context/context";
 import { useState } from "react"
 
 export default function Page() {
+  useEffect(() => {
+    document.title = "About Me - Muhammad Faisal";
+  }, []);
+
   const { section, test } = useAppContext();
   // console.log(test, "about-me/page.js")
   
