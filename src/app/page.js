@@ -69,7 +69,7 @@ export default function Home() {
       </div>
       <div className="bg-right bg-cover bg-no-repeat -inset-x-[140px] max-sm:-inset-x-0">
         <img
-          src="/bg-blurs.png"
+          src="https://res.cloudinary.com/dt1e1fd6s/image/upload/v1746267321/portfolio/jw54obh7iibldu0eaylw.png"
           alt="Background"
           className="fixed right-0 inset-y-36 w-[50%] max-sm:left-36 max-sm:w-[70%] max-sm:right-0 h-[70%] select-none"
           loading="eager"

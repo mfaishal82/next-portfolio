@@ -8,7 +8,7 @@ export default function Education() {
       {/* header */}
       <div className="grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96]">
             <div className="border-r-2 border-[#1E2D3D]">
-              <div className="p-2 pr-5 w-[200px] flex flex-row justify-between">
+              <div className="p-2 pr-5 w-[200px] flex flex-row justify-between hover:bg-[#1E2D3D] transition-colors">
               education-info
               <span className="select-none cursor-default">x</span>
           </div>
@@ -106,8 +106,8 @@ export default function Education() {
         </div>
 
         <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5 hover:scale-105 hover:duration-500 max-sm:hidden">
-            { show === "NC" && <img src="NC.png" loading="lazy" />  }
-            { show === "HCK" && <img src="HCK.png" loading="lazy" />}            
+            { show === "NC" && <img src="https://res.cloudinary.com/dt1e1fd6s/image/upload/v1746268398/portfolio/rh4yxesy30yz2rlhyucu.png" loading="lazy" />  }
+            { show === "HCK" && <img src="https://res.cloudinary.com/dt1e1fd6s/image/upload/v1746268448/portfolio/at2i9y1gb8f2bpinmgnl.png" loading="lazy" />}            
         </div>
       </div>
     </>

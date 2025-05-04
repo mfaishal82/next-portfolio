@@ -7,7 +7,7 @@ export default function Bio() {
             {/* header */}
             <div className="grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96]">
                 <div className="border-r-2 border-[#1E2D3D] max-sm:col-span-2">
-                    <div className="p-2 pr-5 border-r-2 border-[#1E2D3D] w-[200px] flex flex-row justify-between">
+                    <div className="p-2 pr-5 border-r-2 border-[#1E2D3D] w-[200px] flex flex-row justify-between hover:bg-[#1E2D3D] transition-colors">
                         personal-info
                         <span>
                         x
@@ -50,10 +50,10 @@ export default function Bio() {
                 <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5 max-sm:hidden">
                     <div className="flex flex-row gap-5">
                         <div>
-                        <img src="SS2.png" width={"100"} height={"150"}  />
+                        <img src="https://res.cloudinary.com/dt1e1fd6s/image/upload/v1746319629/SS2_x0kxnq.png" width={"100"} height={"150"}  />
                         </div>
                         <div>
-                        <img src="SS1.png" width={"400"} height={"250"} />
+                        <img src="https://res.cloudinary.com/dt1e1fd6s/image/upload/v1746319629/SS1_mjkz8m.png" width={"400"} height={"250"} />
                         </div>
                     </div>
                     <div>
