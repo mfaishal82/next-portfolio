@@ -1,9 +1,7 @@
+import { MongoClient, ServerApiVersion } from 'mongodb';
 
-
-import { MongoClient, ServerApiVersion } from'mongodb';
 const uri = process.env.NEXT_PUBLIC_MONGODB_URI;
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -12,4 +10,14 @@ const client = new MongoClient(uri, {
   }
 });
 
-export const database = client.db("Portfolio");
+let database;
+
+async function connect() {
+  if (!database) {
+    await client.connect();
+    database = client.db("Portfolio");
+  }
+  return database;
+}
+
+export { connect };
