@@ -18,6 +18,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta property="og:title" content="Muhammad Faisal - Portfolio" />
+        <meta property="og:description" content="Portfolio Muhammad Faisal." />
+        <meta property="og:image" content="/thumbnail.png" />
+        <meta property="og:url" content="https://mfaishal.my.id/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Muhammad Faisal - Portfolio" />
+        <meta name="twitter:description" content="Portfolio Muhammad Faisal." />
+      </head>
       <body
         className={`${firaCode.variable} bg-[#011627] overflow-y-auto overflow-x-hidden scheme-dark`}
         style={{ fontFamily: "var(--font-fira-code)" }}

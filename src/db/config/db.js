@@ -1,7 +1,11 @@
-import { MongoClient, ServerApiVersion } from 'mongodb';
+import dotenv from 'dotenv';
 
-const uri = process.env.NEXT_PUBLIC_MONGODB_URI;
+import { MongoClient, ServerApiVersion } from 'mongodb'
+dotenv.config()
+// Gunakan environment variable atau nilai default untuk development
+const uri = process.env.NEXT_PUBLIC_MONGODB_URI
 
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -10,14 +14,16 @@ const client = new MongoClient(uri, {
   }
 });
 
-let database;
-
-async function connect() {
-  if (!database) {
+async function run() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
-    database = client.db("Portfolio");
+    // Send a ping to confirm a successful connection
+    await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
   }
-  return database;
 }
-
-export { connect };
+run().catch(console.dir);
