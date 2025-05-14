@@ -11,22 +11,34 @@ const firaCode = Fira_Code({
 });
 
 export const metadata = {
-  title: "Muhammad Faisal",
-  description: "Portfolio of Muhammad Faisal",
+  title: "Muhammad Faisal - Portfolio",
+  description: "Portfolio Muhammad Faisal.",
+  openGraph: {
+    title: "Muhammad Faisal - Portfolio",
+    description: "Portfolio Muhammad Faisal.",
+    url: "https://mfaishal.my.id/",
+    siteName: "Muhammad Faisal",
+    images: [
+      {
+        url: "https://mfaishal.my.id/thumbnail.png",
+        width: 1200,
+        height: 630,
+        alt: "Thumbnail of Muhammad Faisal's portfolio",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Muhammad Faisal - Portfolio",
+    description: "Portfolio Muhammad Faisal.",
+    images: ["https://mfaishal.my.id/thumbnail.png"],
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <meta property="og:title" content="Muhammad Faisal - Portfolio" />
-        <meta property="og:description" content="Portfolio Muhammad Faisal." />
-        <meta property="og:image" content="/thumbnail.png" />
-        <meta property="og:url" content="https://mfaishal.my.id/" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Muhammad Faisal - Portfolio" />
-        <meta name="twitter:description" content="Portfolio Muhammad Faisal." />
-      </head>
       <body
         className={`${firaCode.variable} bg-[#011627] overflow-y-auto overflow-x-hidden scheme-dark`}
         style={{ fontFamily: "var(--font-fira-code)" }}
