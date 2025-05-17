@@ -8,7 +8,7 @@ export default function Education() {
       {/* header */}
       <div className="grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96]">
             <div className="border-r-2 border-[#1E2D3D]">
-              <div className="p-2 pr-5 w-[200px] flex flex-row justify-between hover:bg-[#1E2D3D] transition-colors">
+              <div className="p-2 pr-5 w-[200px] flex flex-row justify-between bg-[#1E2D3D]">
               education-info
               <span className="select-none cursor-default">x</span>
           </div>
@@ -18,14 +18,14 @@ export default function Education() {
 
       {/* body */}
       <div className="grid grid-cols-2 max-sm:grid-cols-1 text-[14px] border-[#1E2D3D] text-[#607B96] h-full">
-          <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5">
-          <div className="ml-5 max-sm:ml-1 mt-5">
+        <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5">
+          <div className="ml-5 max-sm:ml-0 mt-5">
             {/* 3 */}
-            <div className="flex gap-x-3 max-sm:gap-x-1.5">
+            <div className="flex gap-x-3">
               {/* Date */}
               <div className="w-20 text-end">
                 <span className="text-xs text-gray-500 dark:text-neutral-400">
-                  2019-<br/>2023
+                  Nov '24-<br/>Jan '25
                 </span>
               </div>
 
@@ -50,7 +50,7 @@ export default function Education() {
               {/* Date */}
               <div className="w-20 text-end">
                 <span className="text-xs text-gray-500 dark:text-neutral-400">
-                  Nov 2023-Apr 2024
+                  Nov '23-Apr '24
                 </span>
               </div>
 
@@ -82,7 +82,7 @@ export default function Education() {
               {/* Date */}
               <div className="w-20 text-end">
                 <span className="text-xs text-gray-500 dark:text-neutral-400">
-                  Nov 2024-Jan 2025
+                  2019-2023
                 </span>
               </div>
 

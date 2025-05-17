@@ -4,7 +4,7 @@ export default function Interests() {
       {/* header */}
       <div className="grid grid-cols-2 max-sm:grid-cols-1 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96]">
             <div className="border-r-2 border-[#1E2D3D]">
-              <div className="p-2 pr-1 w-[200px] border-r-2 border-[#1E2D3D] flex flex-row justify-between hover:bg-[#1E2D3D] transition-colors">
+              <div className="p-2 pr-1 w-[200px] border-r-2 border-[#1E2D3D] flex flex-row justify-between bg-[#1E2D3D]">
             interests-and-skills
             <span className="select-none cursor-default">x</span>
           </div>

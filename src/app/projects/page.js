@@ -16,7 +16,7 @@ export default function Page() {
       {/* header */}
       <div className="w-full grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96] bg-[#011627]">
         <div className="">
-          <div className="p-3 py-2 pr-6 border-r-2 border-[#1E2D3D] w-[220px] flex flex-row justify-between items-center hover:bg-[#1E2D3D] transition-colors">
+          <div className="p-3 py-2 pr-6 border-r-2 border-[#1E2D3D] w-[220px] flex flex-row justify-between items-center bg-[#1E2D3D]">
             <span className="font-medium">list-projects</span>
             <Link href="/" className="hover:text-[#d94343] transition-colors">
               <span className="cursor-pointer text-[14px]">x</span>

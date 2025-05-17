@@ -7,7 +7,7 @@ export default function Bio() {
             {/* header */}
             <div className="grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96]">
                 <div className="border-r-2 border-[#1E2D3D] max-sm:col-span-2">
-                    <div className="p-2 pr-5 border-r-2 border-[#1E2D3D] w-[200px] flex flex-row justify-between hover:bg-[#1E2D3D] transition-colors">
+                    <div className="p-2 pr-5 border-r-2 border-[#1E2D3D] w-[200px] flex flex-row justify-between bg-[#1E2D3D]">
                         personal-info
                         <span>
                         x

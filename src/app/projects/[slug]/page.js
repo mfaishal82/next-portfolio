@@ -42,7 +42,7 @@ export default function ProjectDetail() {
       {/* header */}
       <div className="w-full grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96]">
         <div className="">
-          <div className="p-2 pr-3 border-r-2 border-[#1E2D3D] w-[50%] flex flex-row justify-between max-sm:col-span-2 max-sm:w-full">
+          <div className="p-2 pr-3 border-r-2 border-[#1E2D3D] w-[50%] flex flex-row justify-between max-sm:col-span-2 max-sm:w-full bg-[#1E2D3D]">
             _{project.title}
             <Link href="/projects">
               <span className="select-none cursor-default">x</span>

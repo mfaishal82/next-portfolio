@@ -9,7 +9,7 @@ export default function Experience() {
             {/* header */}
             <div className="grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96]">
                 <div className="border-r-2 border-[#1E2D3D]">
-                    <div className="p-2 pr-5 w-[200px] flex flex-row justify-between hover:bg-[#1E2D3D] transition-colors">
+                    <div className="p-2 pr-5 w-[200px] flex flex-row justify-between bg-[#1E2D3D]">
                         experiences
                         <span className="select-none cursor-default">x</span>
                     </div>
@@ -35,7 +35,7 @@ export default function Experience() {
                                     Programmer (frontend) - 2024
                                 </button>
                                 <p className="mt-1 text-sm text-gray-600 dark:text-neutral-400">
-                                    PT Talenta Sinergi Group
+                                    Eduwork
                                 </p>
                                 <ul>
                                     <li>• Participated in a developer training program led by a Project Manager, learning the React.js and Laravel(frontend html) stack for web application development.</li>
