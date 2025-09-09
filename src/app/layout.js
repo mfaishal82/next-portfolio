@@ -4,7 +4,7 @@ import "./globals.css";
 import MainLayout from "@/components/layout/mainLayout";
 import { AppProvider } from '@/context/context';
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import SplashCursor from "@/Animations/SplashCursor/SplashCursor";
+// import SplashCursor from "@/Animations/SplashCursor/SplashCursor";
 
 const firaCode = Fira_Code({
   variable: "--font-fira-code",
@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
         className={`${firaCode.variable} bg-[#011627] overflow-y-auto overflow-x-hidden scheme-dark`}
         style={{ fontFamily: "var(--font-fira-code)" }}
       >
-        <SplashCursor />
+        {/* <SplashCursor /> */}
         <SpeedInsights/>
         <AppProvider>
           <MainLayout>{children}</MainLayout>
