@@ -14,22 +14,22 @@ export default function MainLayout({ children }) {
   const pathname = usePathname();
   return (
     <>
-      <div className="min-h-screen flex flex-col w-full">
+      <div className="container mx-auto max-w-10xl min-h-screen flex flex-col w-full px-0">
         <Header />
 
         <div className="flex-1 text-white grid grid-cols-4 max-sm:flex pb-14 max-sm:flex-col mt-0 text-[14px]">
-          
+
           {/* Sidebar */}
           { pathname !== "/" ? <div className="border-r-2 border-[#1E2D3D] max-sm:border-none max-sm:col-span-4">
                 {
-                    pathname === "/about-me" ? <Sidebar_About /> : 
+                    pathname === "/about-me" ? <Sidebar_About /> :
                     pathname === "/contact-me" ? <Sidebar_Contact/> :
                     pathname === "/projects" || `/projects/${id}` ? <Sidebar_Project/> :
                     null
                     // pathname === `/projects/${id}` ? <Sidebar_Project/> :
                 }
             </div>
-          : 
+          :
             <div className="p-3"/>
           }
 
@@ -39,11 +39,11 @@ export default function MainLayout({ children }) {
           </div>
 
           {/* Menu for Mobile */}
-          {openMenu && 
+          {openMenu &&
             <MobileMenu setOpenMenu={setOpenMenu} />
           }
         </div>
-        
+
         <Footer />
       </div>
     </>

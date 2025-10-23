@@ -1,7 +1,8 @@
 "use client"
-// import TypeIt from "typeit";
 import TypeIt from "typeit-react";
 import { useEffect } from "react";
+import OptimizedImage from "@/components/OptimizedImage";
+import Image from "next/image";
 
 export default function Home() {
   useEffect(() => {
@@ -44,7 +45,7 @@ export default function Home() {
               <span className="text-[#4D5BCE]">const</span>{" "}
               <span className="text-[#43D9AD] ">email</span> ={" "}
               <span className="text-[#E99287] hover:underline">
-                "mfaishal.works@gmail.com";
+                &quot;mfaishal.works@gmail.com&quot;
               </span>
             </span>
           </div>
@@ -59,7 +60,7 @@ export default function Home() {
                   href="https://github.com/mfaishal82/next-portfolio"
                   target="_blank"
                 >
-                  "https://github.com/mfaishal82"
+                  &quot;https://github.com/mfaishal82&quot;
                 </a>
                 ;
               </span>
@@ -68,12 +69,20 @@ export default function Home() {
         </div>
       </div>
       <div className="bg-right bg-cover bg-no-repeat -inset-x-[140px] max-sm:-inset-x-0">
-        <img
-          src="https://res.cloudinary.com/dt1e1fd6s/image/upload/v1746267321/portfolio/jw54obh7iibldu0eaylw.png"
-          alt="Background"
-          className="fixed right-0 inset-y-36 w-[50%] max-sm:left-36 max-sm:w-[70%] max-sm:right-0 h-[70%] select-none"
-          loading="eager"
-        />
+        <div className="bg-right bg-cover bg-no-repeat -inset-x-[140px] max-sm:-inset-x-0">
+          <div
+            className="fixed right-0 inset-y-36 w-[50%] max-sm:left-36 max-sm:w-[70%] max-sm:right-0 h-[70%] select-none"
+          >
+            <Image
+              src="https://res.cloudinary.com/dt1e1fd6s/image/upload/v1746267321/portfolio/jw54obh7iibldu0eaylw.png"
+              alt="Background"
+              loading="eager"
+              fill={true}
+              priority={true}
+              sizes="(max-width: 639px) 70vw, 50vw"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import IconFramework from "@/components/projects/iconFramwork";
 import { useAppContext } from "@/context/context";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Page() {
   useEffect(() => {
@@ -30,15 +31,17 @@ export default function Page() {
         {listProjects.map((project, index) => (
           <div key={index} className=" flex flex-col group transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
             <div className="text-[#607B96] mb-2 font-mono tracking-wide max-sm:self-center group-hover:text-[#43D9AD] transition-colors">
-              project-{project.type} // _{project.title}
+              project-{project.type} (// _){project.title}
             </div>
             <div className="w-[380px] max-sm:w-screen h-[325px] max-sm:h-[325px] rounded-[15px] bg-[#011221] border border-[#1C2B3A] overflow-hidden shadow-lg">
               <div className="bg-white rounded-t-[15px] h-[50%] relative overflow-hidden">
-                <img 
-                  src={`${project.image[0]}`} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
-                  loading="eager" 
+                <Image
+                  src={`${project.image[0]}`}
+                  className="object-cover transition-transform duration-500 hover:scale-110"
                   alt={project.title}
+                  fill={true}
+                  priority={true}
+                  sizes="(max-width: 576px) 100vw, 576px"
                 />
                 <IconFramework project={project} />
               </div>
@@ -47,8 +50,8 @@ export default function Page() {
                 <p className="text-[#607B96] line-clamp-3">{project.description}</p>
                 <div className="flex flex-row justify-between mt-4 gap-3">
                   <Link href={`projects/${project.slug}`}>
-                    <button 
-                      onClick={() => {setId(index); setProjectActive(project.title)}} 
+                    <button
+                      onClick={() => {setId(index); setProjectActive(project.title)}}
                       className="transition-all duration-300 bg-[#1C2B3A] text-white hover:bg-[#43D9AD] hover:text-[#011627] text-[14px] py-2 px-4 rounded-lg font-medium"
                     >
                       project-details
