@@ -6,13 +6,13 @@ export default function Footer() {
             find-me-in
           </div>
           {/* LinkedIn */}
-          <a href="https://www.linkedin.com/in/mfaishal82/" target="_blank">
+          <a href="https://www.linkedin.com/in/mfaishal82/" target="_blank" aria-label="my linkedin profile">
             <div className="p-3 border-r-2 border-[#1E2D3D] ">
-              <img src="/linkedin.svg" width={"20"} height={"20"} />
+              <img src="/linkedin.svg" width={"20"} height={"20"} alt="linkedin" />
             </div>
           </a>
           {/* Fb */}
-          <a href="https://web.facebook.com/mf.ihbs/" target="_blank">
+          <a href="https://web.facebook.com/mf.ihbs/" target="_blank" aria-label="my facebook profile">
             <div className="p-3 border-r-2 border-[#1E2D3D]">
               <svg width="11" height="21" viewBox="0 0 11 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 12H9.5L10.5 8H7V6C7 4.97 7 4 9 4H10.5V0.64C10.174 0.597 8.943 0.5 7.643 0.5C4.928 0.5 3 2.157 3 5.2V8H0V12H3V20.5H7V12Z" fill="#607B96"/>
@@ -21,7 +21,7 @@ export default function Footer() {
           </a>
           {/* Github */}
           <div className="ml-auto">
-            <a href="https://github.com/mfaishal82" target="_blank">
+            <a href="https://github.com/mfaishal82" target="_blank" aria-label="my github profile">
               <div className="p-3 border-l-2 border-[#1E2D3D] flex flex-row items-center gap-2 ">
                 @mfaishal82
                 <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
