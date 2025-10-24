@@ -79,6 +79,7 @@ export default function Home() {
               loading="eager"
               fill={true}
               priority={true}
+              fetchpriority="high"
               sizes="(max-width: 639px) 70vw, 50vw"
             />
           </div>

@@ -40,6 +40,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://unpkg.com" />
+      </head>
       <body
         className={`${firaCode.variable} bg-[#011627] overflow-y-auto overflow-x-hidden scheme-dark`}
         style={{ fontFamily: "var(--font-fira-code)" }}
@@ -50,7 +53,7 @@ export default function RootLayout({ children }) {
           <MainLayout>{children}</MainLayout>
         </AppProvider>
         {/* <script src="/node_modules/preline/dist/preline.js"></script> */}
-        <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+        <script rel="preconnect" src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js" defer></script>
       </body>
     </html>
   );
