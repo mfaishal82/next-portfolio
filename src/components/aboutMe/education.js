@@ -4,34 +4,6 @@ export default function Education() {
   const [show, setShow] = useState("");
   const [timelineStyle, setTimelineStyle] = useState("vertical"); // default style is vertical
 
-  const educationData = [
-    {
-      id: "NC",
-      period: "Nov '24-Jan '25",
-      institution: "Nusacodes",
-      program: "Bootcamp Web Developer",
-      details: "",
-      image: "https://res.cloudinary.com/dt1e1fd6s/image/upload/v1746268398/portfolio/rh4yxesy30yz2rlhyucu.png"
-    },
-    {
-      id: "HCK",
-      period: "Nov '23-Apr '24",
-      institution: "Hacktiv8",
-      program: "Fullstack Javascript Immersive Program",
-      details: "Final grade: 75 | transcript",
-      link: "https://drive.google.com/file/d/1klcekMmq371usOsoC_2FzQkDQ8XZzr3b/view?usp=sharing",
-      image: "https://res.cloudinary.com/dt1e1fd6s/image/upload/v1746268448/portfolio/at2i9y1gb8f2bpinmgnl.png"
-    },
-    {
-      id: "IAIP",
-      period: "2019-2023",
-      institution: "Institut Agama Islam Persis - Bandung",
-      program: "Bachelor of Education",
-      details: "GPA: 3.71",
-      image: ""
-    }
-  ];
-
   const renderVerticalTimeline = () => (
     <div className="ml-5 max-sm:ml-0 mt-5">
       {/* 3 */}
@@ -126,8 +98,8 @@ export default function Education() {
         <div className="flex overflow-x-auto pb-4 hide-scrollbar">
           <div className="flex space-x-8 px-4">
             {educationData.map((edu, index) => (
-              <div 
-                key={edu.id} 
+              <div
+                key={edu.id}
                 className="relative flex-shrink-0 w-64 bg-[#1c2b3a] dark:bg-[#011627] rounded-lg shadow-lg border border-[#1E2D3D] overflow-hidden hover:shadow-xl transition-all duration-300"
                 onClick={() => setShow(edu.id)}
               >
@@ -145,10 +117,10 @@ export default function Education() {
                       {edu.details.includes('transcript') ? (
                         <>
                           Final grade: 75 |{" "}
-                          <a 
-                            href={edu.link} 
+                          <a
+                            href={edu.link}
                             className="text-blue-500 hover:underline"
-                            target="_blank" 
+                            target="_blank"
                             rel="noopener noreferrer"
                           >
                             transcript
@@ -163,7 +135,7 @@ export default function Education() {
             ))}
           </div>
         </div>
-        
+
         {/* Timeline line */}
         <div className="absolute left-0 right-0 h-0.5 bg-gray-300 dark:bg-neutral-700 top-20 z-0"></div>
       </div>
@@ -173,7 +145,7 @@ export default function Education() {
   const renderBlockTimeline = () => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-2">
       {educationData.map((edu) => (
-        <div 
+        <div
           key={edu.id}
           onClick={() => setShow(edu.id)}
           className={`p-4 rounded-lg border ${show === edu.id ? 'border-[#43D9AD] bg-[#1c2b3a]' : 'border-[#1E2D3D] bg-[#011627]'} transition-all duration-300 hover:border-[#43D9AD] cursor-pointer`}
@@ -190,10 +162,10 @@ export default function Education() {
               {edu.details.includes('transcript') ? (
                 <>
                   Final grade: 75 |{" "}
-                  <a 
-                    href={edu.link} 
+                  <a
+                    href={edu.link}
                     className="text-blue-500 hover:underline"
-                    target="_blank" 
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     transcript
@@ -223,20 +195,20 @@ export default function Education() {
       {/* Timeline style selector */}
       <div className="flex justify-end p-2 border-b border-[#1E2D3D]">
         <div className="flex space-x-2">
-          <button 
-            onClick={() => setTimelineStyle("vertical")} 
+          <button
+            onClick={() => setTimelineStyle("vertical")}
             className={`px-3 py-1 text-xs rounded ${timelineStyle === "vertical" ? "bg-[#1E2D3D] text-[#43D9AD]" : "text-[#607B96]"}`}
           >
             Vertical
           </button>
-          <button 
-            onClick={() => setTimelineStyle("horizontal")} 
+          <button
+            onClick={() => setTimelineStyle("horizontal")}
             className={`px-3 py-1 text-xs rounded ${timelineStyle === "horizontal" ? "bg-[#1E2D3D] text-[#43D9AD]" : "text-[#607B96]"}`}
           >
             Horizontal
           </button>
-          <button 
-            onClick={() => setTimelineStyle("blocks")} 
+          <button
+            onClick={() => setTimelineStyle("blocks")}
             className={`px-3 py-1 text-xs rounded ${timelineStyle === "blocks" ? "bg-[#1E2D3D] text-[#43D9AD]" : "text-[#607B96]"}`}
           >
             Cards
@@ -259,7 +231,7 @@ export default function Education() {
             {show === "IAIP" && <div className="flex items-center justify-center h-full text-[#43D9AD]">Institut Agama Islam Persis - Bandung</div>}
           </div>
         )}
-        
+
         {/* Show image below in card view for small screens */}
         {(timelineStyle === "horizontal" || timelineStyle === "blocks") && show && (
           <div className="mt-4 p-3 flex justify-center items-center border-t border-[#1E2D3D] col-span-2">

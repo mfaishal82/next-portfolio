@@ -76,10 +76,11 @@ export default function Home() {
             <Image
               src="https://res.cloudinary.com/dt1e1fd6s/image/upload/v1746267321/portfolio/jw54obh7iibldu0eaylw.png"
               alt="Background"
-              loading="eager"
+              // loading="eager"
+              quality={50}
               fill={true}
               priority={true}
-              fetchpriority="high"
+              fetchPriority="high"
               sizes="(max-width: 639px) 70vw, 50vw"
             />
           </div>
