@@ -37,9 +37,7 @@ export default function MainLayout({ children }) {
           )}
 
           {/* Main */}
-          <div className="col-span-3 max-sm:col-span-4 z-0 sm:truncate">
-            {children}
-          </div>
+          <div className="col-span-3 max-sm:col-span-4 z-0">{children}</div>
 
           {/* Menu for Mobile */}
           {openMenu && <MobileMenu setOpenMenu={setOpenMenu} />}
