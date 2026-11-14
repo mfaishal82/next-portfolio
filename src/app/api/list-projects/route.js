@@ -1,18 +1,26 @@
 import { fetchProjects } from '@/services/portfolioService';
+import staticProjects from '@/project';
+import { NextResponse } from 'next/server';
 
-export const dynamic = 'force-dynamic';
+// Revalidate cache every 5 minutes (300 seconds)
+export const revalidate = 300;
 
 export async function GET() {
   try {
     const data = await fetchProjects();
-    // Kompatibilitas dengan pembacaan data.default dan data array langsung
-    return Response.json({
-      default: data,
-      projects: data,
-    });
+    return NextResponse.json(
+      {
+        default: data,
+        projects: data,
+      },
+      {
+        headers: {
+          'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
+        },
+      }
+    );
   } catch (error) {
     console.error('API /api/list-projects error:', error);
-    const staticProjects = require('@/project');
-    return Response.json(staticProjects);
+    return NextResponse.json(staticProjects);
   }
 }

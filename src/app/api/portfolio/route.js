@@ -1,13 +1,19 @@
 import { fetchAllPortfolioData } from '@/services/portfolioService';
+import { NextResponse } from 'next/server';
 
-export const dynamic = 'force-dynamic';
+// Revalidate cache every 5 minutes (300 seconds) to prevent Firestore quota exhaustion & DoS
+export const revalidate = 300;
 
 export async function GET() {
   try {
     const data = await fetchAllPortfolioData();
-    return Response.json(data);
+    return NextResponse.json(data, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
+      },
+    });
   } catch (error) {
     console.error('API /api/portfolio error:', error);
-    return Response.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to fetch portfolio data' }, { status: 500 });
   }
 }

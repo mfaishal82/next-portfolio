@@ -1,6 +1,6 @@
 "use client"
 import { createContext, useContext, useEffect, useState } from 'react';
-import { fallbackProfile } from '@/services/portfolioService';
+import { fallbackProfile } from '@/constants/profile';
 
 const AppContext = createContext();
 
