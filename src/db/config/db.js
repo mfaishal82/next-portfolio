@@ -1,29 +1,47 @@
-import dotenv from 'dotenv';
+import { MongoClient, ServerApiVersion } from 'mongodb';
 
-import { MongoClient, ServerApiVersion } from 'mongodb'
-dotenv.config()
-// Gunakan environment variable atau nilai default untuk development
-const uri = process.env.NEXT_PUBLIC_MONGODB_URI
+/**
+ * Lazily create (and cache) the MongoDB client.
+ *
+ * This module is imported by `/api/projects`, and Next.js evaluates route
+ * modules during `next build` while collecting page data. Building the client
+ * at import time therefore crashed the production build with
+ * `Cannot read properties of undefined (reading 'startsWith')` whenever
+ * NEXT_PUBLIC_MONGODB_URI was not present in the build environment.
+ *
+ * The client is now created on first real use, and the connection string is
+ * only validated at that point.
+ */
+const globalForMongo = globalThis;
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
+function getUri() {
+  const uri = process.env.NEXT_PUBLIC_MONGODB_URI || process.env.MONGODB_URI;
+  if (!uri) {
+    throw new Error(
+      'MongoDB URI is not configured (set NEXT_PUBLIC_MONGODB_URI). The legacy /api/projects route is unavailable.'
+    );
   }
-});
-
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
+  return uri;
 }
-run().catch(console.dir);
+
+function getClient() {
+  if (!globalForMongo.__mongoClientPromise) {
+    const client = new MongoClient(getUri(), {
+      serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+      },
+    });
+    globalForMongo.__mongoClientPromise = client.connect();
+  }
+  return globalForMongo.__mongoClientPromise;
+}
+
+/** Returns a connected Db handle. */
+export async function connect() {
+  const client = await getClient();
+  return client.db();
+}
+
+export default connect;
