@@ -27,20 +27,20 @@ export default function Experience() {
                         {experiences && experiences.length > 0 ? (
                             experiences.map((exp, idx) => (
                                 <div key={exp.id || idx} className="flex gap-x-3">
-                                    <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
+                                    <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-[#1E2D3D]">
                                         <div className="relative z-10 size-7 flex justify-center items-center">
-                                            <div className={`size-2 rounded-full ${selectedId === exp.id ? 'bg-[#43D9AD]' : 'bg-gray-400 dark:bg-neutral-600'}`}></div>
+                                            <div className={`size-2 rounded-full ${selectedId === exp.id ? 'bg-[#43D9AD]' : 'bg-[#607B96]'}`}></div>
                                         </div>
                                     </div>
 
                                     <div className="grow pt-0.5 pb-8">
                                         <button 
                                             onClick={() => setSelectedId(exp.id)} 
-                                            className={`flex gap-x-1.5 font-semibold text-left transition-colors ${selectedId === exp.id ? 'text-[#43D9AD]' : 'text-gray-800 dark:text-neutral-200 hover:text-[#43D9AD]'}`}
+                                            className={`flex gap-x-1.5 font-semibold text-left transition-colors ${selectedId === exp.id ? 'text-[#43D9AD]' : 'text-[#CBD5E1] hover:text-[#43D9AD]'}`}
                                         >
                                             {exp.role} {exp.period ? `(${exp.period})` : ''}
                                         </button>
-                                        <p className="mt-1 text-sm font-medium text-gray-600 dark:text-neutral-400">
+                                        <p className="mt-1 text-sm font-medium text-[#8AA0B4]">
                                             {exp.company} {exp.type ? `• ${exp.type}` : ''}
                                         </p>
                                         {exp.description && (
@@ -69,7 +69,7 @@ export default function Experience() {
                         ) : (
                             <div className="flex gap-x-3">
                                 <div className="grow pt-0.5 pb-8">
-                                    <p className="text-gray-600 dark:text-neutral-400">Belum ada pengalaman kerja tercatat.</p>
+                                    <p className="text-[#8AA0B4]">Belum ada pengalaman kerja tercatat.</p>
                                 </div>
                             </div>
                         )}
@@ -89,7 +89,7 @@ export default function Experience() {
                             </div>
                             {activeExp.technologies && (
                                 <div className="pt-2 border-t border-[#1E2D3D]">
-                                    <span className="text-[11px] text-gray-400">Tech Stack: </span>
+                                    <span className="text-[11px] text-[#8AA0B4]">Tech Stack: </span>
                                     <span className="text-xs text-white">{activeExp.technologies.join(', ')}</span>
                                 </div>
                             )}

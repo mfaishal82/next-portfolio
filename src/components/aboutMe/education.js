@@ -36,26 +36,26 @@ export default function Education() {
         <div key={edu.id || idx} className="flex gap-x-3">
           {/* Date */}
           <div className="w-24 text-end shrink-0">
-            <span className="text-xs text-gray-500 dark:text-neutral-400">
+            <span className="text-xs text-[#8AA0B4]">
               {edu.period}
             </span>
           </div>
 
-          <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
+          <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-[#1E2D3D]">
             <div className="relative z-10 size-7 flex justify-center items-center">
-              <div className={`size-2 rounded-full ${show === edu.id ? 'bg-[#43D9AD]' : 'bg-gray-400 dark:bg-neutral-600'}`}></div>
+              <div className={`size-2 rounded-full ${show === edu.id ? 'bg-[#43D9AD]' : 'bg-[#607B96]'}`}></div>
             </div>
           </div>
 
           <div className="grow pt-0.5 pb-8">
-            <button onClick={() => setShow(edu.id)} className={`flex gap-x-1.5 font-semibold text-left transition-colors ${show === edu.id ? 'text-[#43D9AD]' : 'text-gray-800 dark:text-neutral-200 hover:text-[#43D9AD]'}`}>
+            <button onClick={() => setShow(edu.id)} className={`flex gap-x-1.5 font-semibold text-left transition-colors ${show === edu.id ? 'text-[#43D9AD]' : 'text-[#CBD5E1] hover:text-[#43D9AD]'}`}>
               {edu.school || edu.institution}
             </button>
-            <p className="mt-1 text-sm text-gray-600 dark:text-neutral-400">
+            <p className="mt-1 text-sm text-[#8AA0B4]">
               {edu.degree || edu.program}
             </p>
             {edu.grade && (
-              <p className="text-xs text-gray-500 dark:text-neutral-500 mt-0.5">
+              <p className="text-xs text-[#607B96] mt-0.5">
                 {edu.grade}
               </p>
             )}
@@ -73,20 +73,20 @@ export default function Education() {
             {eduItems.map((edu, index) => (
               <div
                 key={edu.id || index}
-                className="relative flex-shrink-0 w-64 bg-[#1c2b3a] dark:bg-[#011627] rounded-lg shadow-lg border border-[#1E2D3D] overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="relative flex-shrink-0 w-64 bg-[#011221] rounded-lg shadow-lg border border-[#1E2D3D] overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
                 onClick={() => setShow(edu.id)}
               >
-                <div className={`w-full h-1 ${show === edu.id ? 'bg-[#43D9AD]' : 'bg-gray-500'}`}></div>
+                <div className={`w-full h-1 ${show === edu.id ? 'bg-[#43D9AD]' : 'bg-[#607B96]'}`}></div>
                 <div className="p-4">
-                  <div className="text-sm text-gray-500 dark:text-neutral-400 mb-2">{edu.period}</div>
-                  <h3 className="text-base font-semibold text-gray-800 dark:text-[#43D9AD] mb-1">
+                  <div className="text-sm text-[#8AA0B4] mb-2">{edu.period}</div>
+                  <h3 className="text-base font-semibold text-[#43D9AD] mb-1">
                     {edu.school || edu.institution}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-neutral-400 mb-2">
+                  <p className="text-sm text-[#8AA0B4] mb-2">
                     {edu.degree || edu.program}
                   </p>
                   {edu.grade && (
-                    <p className="text-xs text-gray-500 dark:text-neutral-500">
+                    <p className="text-xs text-[#607B96]">
                       {edu.grade}
                     </p>
                   )}
@@ -108,15 +108,15 @@ export default function Education() {
           onClick={() => setShow(edu.id)}
           className={`p-4 rounded-lg border ${show === edu.id ? 'border-[#43D9AD] bg-[#1c2b3a]' : 'border-[#1E2D3D] bg-[#011627]'} transition-all duration-300 hover:border-[#43D9AD] cursor-pointer`}
         >
-          <div className="text-xs text-gray-500 dark:text-neutral-400 mb-2">{edu.period}</div>
-          <h3 className="text-base font-semibold text-gray-800 dark:text-[#43D9AD] mb-1">
+          <div className="text-xs text-[#8AA0B4] mb-2">{edu.period}</div>
+          <h3 className="text-base font-semibold text-[#43D9AD] mb-1">
             {edu.school || edu.institution}
           </h3>
-          <p className="text-sm text-gray-600 dark:text-neutral-400 mb-2">
+          <p className="text-sm text-[#8AA0B4] mb-2">
             {edu.degree || edu.program}
           </p>
           {edu.grade && (
-            <p className="text-xs text-gray-500 dark:text-neutral-500">
+            <p className="text-xs text-[#607B96]">
               {edu.grade}
             </p>
           )}
@@ -181,7 +181,7 @@ export default function Education() {
               <div className="p-4 rounded-xl bg-[#011627] border border-[#1E2D3D] space-y-2">
                 <h4 className="text-base font-bold text-white">{selectedEdu.school}</h4>
                 <p className="text-xs text-[#43D9AD] font-mono">{selectedEdu.degree}</p>
-                <p className="text-xs text-gray-400">Periode: {selectedEdu.period}</p>
+                <p className="text-xs text-[#8AA0B4]">Periode: {selectedEdu.period}</p>
                 {selectedEdu.grade && (
                   <p className="text-xs text-slate-300 pt-2 border-t border-[#1E2D3D]">{selectedEdu.grade}</p>
                 )}
