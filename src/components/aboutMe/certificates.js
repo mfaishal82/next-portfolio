@@ -1,11 +1,53 @@
 import { useState } from "react";
 import { useAppContext } from "@/context/context";
 
+// Pemetaan berkas sertifikat di /public untuk data yang belum punya imageUrl di Firestore
+const CERT_IMAGE_BY_KEY = {
+    "cert-java-pintaar": "/java.png",
+    "PINTAAR-JAVA-2024": "/java.png",
+    "cert-hr-js": "/js.png",
+    "f0b1359b8ec9": "/js.png",
+    "cert-hr-ps": "/prob.png",
+    "1bf1328c35d2": "/prob.png",
+    "cert-hr-css": "/css.png",
+    "8719da02acfd": "/css.png",
+    "cert-hr-sql": "/sql.png",
+    "a0355c4dd270": "/sql.png",
+    "cert-hr-react": "/react.png",
+    "aad4edfa23a3": "/react.png",
+    "cert-hacktiv8-fsjs": "/HCK.png",
+    "H8-FSJS-2024": "/HCK.png",
+    "cert-nusacodes": "/nc.png",
+    "H61001CJ25ID": "/nc.png",
+    "cert-talenta-eduwork": "/work.png",
+    "exp-talenta-eduwork": "/work.png",
+};
+
+function getCertificateImage(cert) {
+    if (!cert) return null;
+    if (cert.imageUrl && String(cert.imageUrl).trim() !== "") return cert.imageUrl;
+    if (cert.id && CERT_IMAGE_BY_KEY[cert.id]) return CERT_IMAGE_BY_KEY[cert.id];
+    if (cert.credentialId && CERT_IMAGE_BY_KEY[cert.credentialId]) return CERT_IMAGE_BY_KEY[cert.credentialId];
+
+    const haystack = `${cert.title || ""} ${cert.issuer || ""}`.toLowerCase();
+    if (haystack.includes("hacktiv8")) return "/HCK.png";
+    if (haystack.includes("nusacodes")) return "/nc.png";
+    if (haystack.includes("eduwork") || haystack.includes("talenta")) return "/work.png";
+    if (haystack.includes("css")) return "/css.png";
+    if (haystack.includes("problem solving")) return "/prob.png";
+    if (haystack.includes("sql")) return "/sql.png";
+    if (haystack.includes("react")) return "/react.png";
+    if (haystack.includes("javascript") || haystack.includes(" js ")) return "/js.png";
+    if (haystack.includes("java") || haystack.includes("pintaar")) return "/java.png";
+    return null;
+}
+
 export default function Certificates() {
     const { certificates } = useAppContext();
     const [selectedCert, setSelectedCert] = useState(null);
 
     const activeCert = selectedCert || certificates?.[0];
+    const activeImage = getCertificateImage(activeCert);
 
     return(
         <>
@@ -27,9 +69,9 @@ export default function Certificates() {
                         {certificates && certificates.length > 0 ? (
                             certificates.map((cert, idx) => (
                                 <div key={cert.id || idx} className="flex gap-x-3">
-                                    <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
+                                    <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-[#1E2D3D]">
                                         <div className="relative z-10 size-7 flex justify-center items-center">
-                                            <div className={`size-2 rounded-full ${activeCert?.id === cert.id ? 'bg-[#43D9AD]' : 'bg-gray-400 dark:bg-neutral-600'}`}></div>
+                                            <div className={`size-2 rounded-full ${activeCert?.id === cert.id ? 'bg-[#43D9AD]' : 'bg-[#607B96]'}`}></div>
                                         </div>
                                     </div>
 
@@ -37,7 +79,7 @@ export default function Certificates() {
                                         <div className="flex items-center gap-2 flex-wrap">
                                             <button 
                                                 onClick={() => setSelectedCert(cert)} 
-                                                className={`flex items-center gap-x-1.5 font-semibold text-left transition-colors ${activeCert?.id === cert.id ? 'text-[#43D9AD]' : 'text-gray-800 dark:text-neutral-200 hover:text-[#43D9AD]'}`}
+                                                className={`flex items-center gap-x-1.5 font-semibold text-left transition-colors ${activeCert?.id === cert.id ? 'text-[#43D9AD]' : 'text-[#CBD5E1] hover:text-[#43D9AD]'}`}
                                             >
                                                 {cert.title} {cert.issuer ? `(${cert.issuer})` : ''}
                                             </button>
@@ -55,14 +97,14 @@ export default function Certificates() {
                                                 </a>
                                             )}
                                         </div>
-                                        <p className="mt-1 text-xs text-gray-600 dark:text-neutral-400">
+                                        <p className="mt-1 text-xs text-[#8AA0B4]">
                                             Diterbitkan: {cert.issueDate || '2024 - 2025'} {cert.credentialId ? `• ID: ${cert.credentialId}` : ''}
                                         </p>
                                     </div>
                                 </div>
                             ))
                         ) : (
-                            <p className="text-gray-600 dark:text-neutral-400">Belum ada sertifikat tercatat.</p>
+                            <p className="text-[#8AA0B4]">Belum ada sertifikat tercatat.</p>
                         )}
                     </div>
                 </div>
@@ -79,13 +121,13 @@ export default function Certificates() {
                             {activeCert.credentialId && (
                                 <p className="text-xs text-slate-300 font-mono">Credential ID: {activeCert.credentialId}</p>
                             )}
-                            {activeCert.imageUrl ? (
-                                <div className="mt-3 rounded-lg overflow-hidden border border-[#1E2D3D]">
-                                    <img src={activeCert.imageUrl} alt={activeCert.title} className="w-full h-auto object-contain" />
+                            {activeImage ? (
+                                <div className="mt-3 rounded-lg overflow-hidden border border-[#1E2D3D] bg-[#011627]">
+                                    <img src={activeImage} alt={`Sertifikat ${activeCert.title}`} className="w-full h-auto object-contain" loading="lazy" />
                                 </div>
                             ) : (
-                                <div className="p-4 rounded-lg bg-[#011221] border border-[#1E2D3D] text-center text-xs text-gray-400">
-                                    Dokumen terverifikasi resmi oleh penerbit
+                                <div className="p-4 rounded-lg bg-[#011221] border border-[#1E2D3D] text-center text-xs text-[#8AA0B4]">
+                                    Berkas sertifikat belum tersedia — cek kredensial asli lewat tombol di bawah.
                                 </div>
                             )}
                             {activeCert.credentialUrl && (
