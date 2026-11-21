@@ -17,8 +17,8 @@ const CERT_IMAGE_BY_KEY = {
     "aad4edfa23a3": "/react.png",
     "cert-hacktiv8-fsjs": "/HCK.png",
     "H8-FSJS-2024": "/HCK.png",
-    "cert-nusacodes": "/nc.png",
-    "H61001CJ25ID": "/nc.png",
+    "cert-nusacodes": "/NC.png",
+    "H61001CJ25ID": "/NC.png",
     "cert-talenta-eduwork": "/work.png",
     "exp-talenta-eduwork": "/work.png",
 };
@@ -31,7 +31,7 @@ function getCertificateImage(cert) {
 
     const haystack = `${cert.title || ""} ${cert.issuer || ""}`.toLowerCase();
     if (haystack.includes("hacktiv8")) return "/HCK.png";
-    if (haystack.includes("nusacodes")) return "/nc.png";
+    if (haystack.includes("nusacodes")) return "/NC.png";
     if (haystack.includes("eduwork") || haystack.includes("talenta")) return "/work.png";
     if (haystack.includes("css")) return "/css.png";
     if (haystack.includes("problem solving")) return "/prob.png";
