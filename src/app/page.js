@@ -1,6 +1,5 @@
 "use client"
 import TypeIt from "typeit-react";
-import { useEffect } from "react";
 import OptimizedImage from "@/components/OptimizedImage";
 import Image from "next/image";
 import { useAppContext } from "@/context/context";
@@ -8,16 +7,12 @@ import { useAppContext } from "@/context/context";
 export default function Home() {
   const { profile } = useAppContext();
 
-  useEffect(() => {
-    document.title = "Home - Muhammad Faisal";
-  }, []);
-
   return (
     <div className="flex flex-row items-center h-full relative max-sm:absolute max-sm:top-3 overflow-auto mb-24 max-sm:p-7">
       <div className="h-full flex flex-col justify-center">
         <div className="flex flex-col justify-center cursor-default select-none">
           Hi all. I am
-          <span className="text-[50px] max-sm:text-[45px]"> Muhammad Faisal</span>
+          <h1 className="text-[50px] max-sm:text-[45px] font-normal"> Muhammad Faisal</h1>
           <span className="text-[#4D5BCE] text-[28px] max-sm:text-[18px]">
             {"> "}<span className="max-sm:text-[#43D9AD]">
             <TypeIt
