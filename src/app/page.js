@@ -3,8 +3,11 @@ import TypeIt from "typeit-react";
 import { useEffect } from "react";
 import OptimizedImage from "@/components/OptimizedImage";
 import Image from "next/image";
+import { useAppContext } from "@/context/context";
 
 export default function Home() {
+  const { profile } = useAppContext();
+
   useEffect(() => {
     document.title = "Home - Muhammad Faisal";
   }, []);
@@ -34,7 +37,7 @@ export default function Home() {
               <span className="text-[#4D5BCE]">const</span>{" "}
               <span className="text-[#43D9AD] ">phoneNumber</span> ={" "}
               <span className="text-white hover:underline">
-                +62 838 7665 7601
+                {profile?.phone || "+62 838 7665 7601"}
               </span>
               <span className="text-[#E99287]">;</span>
             </span>
@@ -45,7 +48,7 @@ export default function Home() {
               <span className="text-[#4D5BCE]">const</span>{" "}
               <span className="text-[#43D9AD] ">email</span> ={" "}
               <span className="text-[#E99287] hover:underline">
-                &quot;mfaishal.works@gmail.com&quot;
+                &quot;{profile?.email || "mfaishal.works@gmail.com"}&quot;
               </span>
             </span>
           </div>
@@ -57,10 +60,11 @@ export default function Home() {
               <span className="text-[#E99287] hover:underline">
                 {" "}
                 <a
-                  href="https://github.com/mfaishal82/next-portfolio"
+                  href={profile?.github || "https://github.com/mfaishal82"}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  &quot;https://github.com/mfaishal82&quot;
+                  &quot;{profile?.github || "https://github.com/mfaishal82"}&quot;
                 </a>
                 ;
               </span>
