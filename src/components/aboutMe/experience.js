@@ -95,7 +95,7 @@ export default function Experience() {
                             )}
                         </div>
                     ) : (
-                        <img src="work.png" loading="lazy" alt="Work" />
+                        <img src="/work.png" width="797" height="448" loading="lazy" alt="Sertifikat pengalaman kerja" />
                     )}
                 </div>
             </div>

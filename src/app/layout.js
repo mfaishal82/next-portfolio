@@ -22,8 +22,10 @@ const firaCode = Fira_Code({
 
 const OG_IMAGE = {
   url: absoluteUrl("/thumbnail.png"),
-  width: 1200,
-  height: 630,
+  // Must match the real file dimensions (1280×720) or social crawlers may
+  // reject or crop the card.
+  width: 1280,
+  height: 720,
   alt: `${SITE_NAME} — Fullstack Developer`,
 };
 

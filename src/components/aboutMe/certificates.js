@@ -42,12 +42,32 @@ function getCertificateImage(cert) {
     return null;
 }
 
+// Intrinsic pixel sizes of the scans in /public. Declaring them on the <img>
+// lets the browser reserve the right box before the file loads, so the preview
+// panel does not jump (CLS) when a certificate is selected.
+const CERT_IMAGE_DIMS = {
+    "/java.png": { w: 879, h: 616 },
+    "/js.png": { w: 783, h: 587 },
+    "/prob.png": { w: 786, h: 582 },
+    "/css.png": { w: 789, h: 581 },
+    "/sql.png": { w: 787, h: 585 },
+    "/react.png": { w: 784, h: 581 },
+    "/HCK.png": { w: 1560, h: 1101 },
+    "/NC.png": { w: 1064, h: 749 },
+    "/work.png": { w: 797, h: 448 },
+};
+
+function getCertificateDims(src) {
+    return CERT_IMAGE_DIMS[src] || null;
+}
+
 export default function Certificates() {
     const { certificates } = useAppContext();
     const [selectedCert, setSelectedCert] = useState(null);
 
     const activeCert = selectedCert || certificates?.[0];
     const activeImage = getCertificateImage(activeCert);
+    const activeDims = getCertificateDims(activeImage);
 
     return(
         <>
@@ -123,7 +143,14 @@ export default function Certificates() {
                             )}
                             {activeImage ? (
                                 <div className="mt-3 rounded-lg overflow-hidden border border-[#1E2D3D] bg-[#011627]">
-                                    <img src={activeImage} alt={`Sertifikat ${activeCert.title}`} className="w-full h-auto object-contain" loading="lazy" />
+                                    <img
+                                        src={activeImage}
+                                        alt={`Sertifikat ${activeCert.title}`}
+                                        className="w-full h-auto object-contain"
+                                        width={activeDims?.w}
+                                        height={activeDims?.h}
+                                        loading="lazy"
+                                    />
                                 </div>
                             ) : (
                                 <div className="p-4 rounded-lg bg-[#011221] border border-[#1E2D3D] text-center text-xs text-[#8AA0B4]">
