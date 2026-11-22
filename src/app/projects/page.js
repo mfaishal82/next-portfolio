@@ -1,19 +1,56 @@
-"use client"
-import { useEffect } from "react";
-import IconFramework from "@/components/projects/iconFramwork";
-import { useAppContext } from "@/context/context";
 import Link from "next/link";
-import Image from "next/image";
+import ProjectsGrid from "@/components/projects/projectsGrid";
+import { fetchProjects } from "@/services/portfolioService";
+import { SITE_NAME, absoluteUrl } from "@/lib/site";
 
-export default function Page() {
-  useEffect(() => {
-    document.title = "Projects - Muhammad Faisal";
-  }, []);
+// Keep the list fresh without refetching on every request.
+export const revalidate = 300;
 
-  const { listProjects, setId, setProjectActive } = useAppContext()
+const title = "Projects";
+const description =
+  "Web and mobile projects built by Muhammad Faisal with Next.js, React, Vue, Laravel and React Native — including CuanPOS, Simple-DonasiKu, MediChat Rx and The Fast News.";
+
+export const metadata = {
+  title,
+  description,
+  alternates: { canonical: "/projects" },
+  openGraph: {
+    title: `${title} — ${SITE_NAME}`,
+    description,
+    url: absoluteUrl("/projects"),
+    type: "website",
+  },
+  twitter: {
+    title: `${title} — ${SITE_NAME}`,
+    description,
+  },
+};
+
+export default async function ProjectsPage() {
+  // Fetched on the server so the project list ships inside the HTML instead of
+  // arriving after hydration.
+  const projects = await fetchProjects();
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `Projects by ${SITE_NAME}`,
+    numberOfItems: projects.length,
+    itemListElement: projects.map((project, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: project.title,
+      url: absoluteUrl(`/projects/${project.slug}`),
+    })),
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+
       {/* header */}
       <div className="w-full grid grid-cols-2 text-[14px] border-b-2 border-[#1E2D3D] text-[#607B96] bg-[#011627]">
         <div className="">
@@ -26,48 +63,9 @@ export default function Page() {
         </div>
       </div>
 
-      {/* body */}
-      <div className="w-full flex flex-row flex-wrap gap-5 max-sm:gap-10 p-8 max-sm:px-0 pb-16 items-start justify-center text-[14px] border-[#1E2D3D] text-[#607B96] min-h-screen bg-[#011627]">
-        {listProjects.map((project, index) => (
-          <div key={index} className=" flex flex-col group transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
-            <div className="text-[#607B96] mb-2 font-mono tracking-wide max-sm:self-center group-hover:text-[#43D9AD] transition-colors">
-              project-{project.type} (// _){project.title}
-            </div>
-            <div className="w-[380px] max-sm:w-screen h-[325px] max-sm:h-[325px] rounded-[15px] bg-[#011221] border border-[#1C2B3A] overflow-hidden shadow-lg">
-              <div className="bg-white rounded-t-[15px] h-[50%] relative overflow-hidden">
-                <Image
-                  src={`${project.image[0]}`}
-                  className="object-cover transition-transform duration-500 hover:scale-110"
-                  alt={project.title}
-                  fill={true}
-                  priority={true}
-                  sizes="(max-width: 576px) 100vw, 576px"
-                />
-                <IconFramework project={project} />
-              </div>
+      <h1 className="sr-only">Projects by Muhammad Faisal — web and mobile portfolio</h1>
 
-              <div className="p-6 bg-[#011221] rounded-b-[15px] flex flex-col justify-between h-[50%]">
-                <p className="text-[#607B96] line-clamp-3">{project.description}</p>
-                <div className="flex flex-row justify-between mt-4 gap-3">
-                  <Link href={`projects/${project.slug}`}>
-                    <button
-                      onClick={() => {setId(index); setProjectActive(project.title)}}
-                      className="transition-all duration-300 bg-[#1C2B3A] text-white hover:bg-[#43D9AD] hover:text-[#011627] text-[14px] py-2 px-4 rounded-lg font-medium"
-                    >
-                      project-details
-                    </button>
-                  </Link>
-                  <a href={`${project.url}`} target="_blank" rel="noopener noreferrer">
-                    <button className="transition-all duration-300 bg-[#1C2B3A] text-white hover:bg-[#43D9AD] hover:text-[#011627] text-[14px] py-2 px-4 rounded-lg font-medium">
-                      view-github
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <ProjectsGrid projects={projects} />
     </>
   );
 }
