@@ -42,26 +42,35 @@ export default function ProjectDetail({ project }) {
           // Project {project.type} / _{project.title} / {project.framework}{" "}
         </div>
         <div className="w-full p-4 pb-0 max-sm:p-0.5 rounded-xl max-sm:relative max-sm:z-0">
-          <Swiper
-            navigation={true}
-            // loop={true}
-            centeredSlides={true}
-            autoplay={{
-              delay: 1000,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Navigation]}
-            className="mySwiper"
-          >
-            {img && img.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <img src={`${image}`} alt={`${project.title} screenshot ${index + 1}`} className="rounded-xl" />
-                </SwiperSlide>
-              ))}
-          </Swiper>
+          {img && img.length > 0 ? (
+            <Swiper
+              navigation={true}
+              // loop={true}
+              centeredSlides={true}
+              autoplay={{
+                delay: 1000,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Navigation]}
+              className="mySwiper"
+            >
+              {img.map((image, index) => (
+                  <SwiperSlide key={index}>
+                    <img src={`${image}`} alt={`${project.title} screenshot ${index + 1}`} className="rounded-xl" />
+                  </SwiperSlide>
+                ))}
+            </Swiper>
+          ) : (
+            <div className="w-full h-[240px] max-sm:h-[200px] rounded-xl bg-[#011221] border border-dashed border-[#1E2D3D] flex flex-col items-center justify-center gap-2 text-center px-6">
+              <span className="font-mono text-xs text-[#607B96]">// screenshot-not-available</span>
+              <span className="font-mono text-[11px] text-[#435c73]">
+                No screenshot has been captured for {project.title} yet.
+              </span>
+            </div>
+          )}
         </div>
 
         <div className="w-full mt-1 p-6 bg-[#011221] rounded-sm max-sm:mt-3 border-t border-[#1E2D3D] space-y-4">

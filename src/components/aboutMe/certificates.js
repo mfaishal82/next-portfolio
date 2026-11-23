@@ -118,26 +118,26 @@ export default function Certificates() {
                                             )}
                                         </div>
                                         <p className="mt-1 text-xs text-[#8AA0B4]">
-                                            Diterbitkan: {cert.issueDate || '2024 - 2025'} {cert.credentialId ? `• ID: ${cert.credentialId}` : ''}
+                                            Issued: {cert.issueDate || '2024 - 2025'} {cert.credentialId ? `• ID: ${cert.credentialId}` : ''}
                                         </p>
                                     </div>
                                 </div>
                             ))
                         ) : (
-                            <p className="text-[#8AA0B4]">Belum ada sertifikat tercatat.</p>
+                            <p className="text-[#8AA0B4]">No certificates recorded yet.</p>
                         )}
                     </div>
                 </div>
 
                 <div className="flex flex-col border-r-2 border-[#1E2D3D] p-6 pt-10 gap-5 max-sm:hidden bg-[#011221]/40">
                     <div className="font-mono text-xs text-[#43D9AD]">
-                        {"//"} Pratinjau Kredensial / Sertifikat
+                        {"//"} Credential / Certificate Preview
                     </div>
                     {activeCert ? (
                         <div className="p-4 rounded-xl bg-[#011627] border border-[#1E2D3D] space-y-3">
                             <h4 className="text-base font-bold text-white">{activeCert.title}</h4>
                             <p className="text-xs text-[#43D9AD] font-mono">{activeCert.issuer}</p>
-                            <p className="text-xs text-gray-400">Tanggal Terbit: {activeCert.issueDate}</p>
+                            <p className="text-xs text-gray-400">Issue Date: {activeCert.issueDate}</p>
                             {activeCert.credentialId && (
                                 <p className="text-xs text-slate-300 font-mono">Credential ID: {activeCert.credentialId}</p>
                             )}
@@ -154,7 +154,7 @@ export default function Certificates() {
                                 </div>
                             ) : (
                                 <div className="p-4 rounded-lg bg-[#011221] border border-[#1E2D3D] text-center text-xs text-[#8AA0B4]">
-                                    Berkas sertifikat belum tersedia — cek kredensial asli lewat tombol di bawah.
+                                    Certificate file not available yet — verify the original using the link below.
                                 </div>
                             )}
                             {activeCert.credentialUrl && (
@@ -165,7 +165,7 @@ export default function Certificates() {
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-1.5 text-xs text-[#43D9AD] hover:underline"
                                     >
-                                        Buka Sertifikat Lengkap ↗
+                                        Open Full Certificate ↗
                                     </a>
                                 </div>
                             )}

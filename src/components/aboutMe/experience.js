@@ -69,7 +69,7 @@ export default function Experience() {
                         ) : (
                             <div className="flex gap-x-3">
                                 <div className="grow pt-0.5 pb-8">
-                                    <p className="text-[#8AA0B4]">Belum ada pengalaman kerja tercatat.</p>
+                                    <p className="text-[#8AA0B4]">No work experience recorded yet.</p>
                                 </div>
                             </div>
                         )}
@@ -78,7 +78,7 @@ export default function Experience() {
 
                 <div className="flex flex-col border-r-2 border-[#1E2D3D] p-6 pt-10 gap-5 max-sm:hidden bg-[#011221]/40">
                     <div className="font-mono text-xs text-[#43D9AD]">
-                        {"//"} Detail Pengalaman Terpilih
+                        {"//"} Selected Experience Details
                     </div>
                     {activeExp ? (
                         <div className="p-4 rounded-xl bg-[#011627] border border-[#1E2D3D] space-y-3">
