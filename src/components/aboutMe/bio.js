@@ -50,10 +50,10 @@ export default function Bio() {
                 <div className="flex flex-col border-r-2 border-[#1E2D3D] p-3 pt-10 gap-5 max-sm:hidden">
                     <div className="flex flex-row gap-5">
                         <div>
-                        <img src="https://res.cloudinary.com/dt1e1fd6s/image/upload/v1746319629/SS2_x0kxnq.png" width={"100"} height={"150"} alt="Mobile App" />
+                        <img src="https://res.cloudinary.com/dt1e1fd6s/image/upload/v1746319629/SS2_x0kxnq.png" width={"100"} height={"150"} alt="MediChat Rx mobile app login screen" />
                         </div>
                         <div>
-                        <img src="https://res.cloudinary.com/dt1e1fd6s/image/upload/v1746319629/SS1_mjkz8m.png" width={"400"} height={"250"} alt="Web App" />
+                        <img src="https://res.cloudinary.com/dt1e1fd6s/image/upload/v1746319629/SS1_mjkz8m.png" width={"400"} height={"250"} alt="Fact Guard web app landing page" />
                         </div>
                     </div>
                     <div>

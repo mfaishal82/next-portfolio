@@ -26,7 +26,7 @@ export default function ProjectsGrid({ projects }) {
             project-{project.type} (// _){project.title}
           </h2>
           <div className="w-[380px] max-sm:w-screen h-[325px] max-sm:h-[325px] rounded-[15px] bg-[#011221] border border-[#1C2B3A] overflow-hidden shadow-lg">
-            <div className="bg-white rounded-t-[15px] h-[50%] relative overflow-hidden">
+            <div className={`rounded-t-[15px] h-[50%] relative overflow-hidden ${project.image?.[0] ? "bg-white" : "bg-[#011221]"}`}>
               {project.image?.[0] ? (
                 <Image
                   src={project.image[0]}
@@ -35,7 +35,12 @@ export default function ProjectsGrid({ projects }) {
                   fill={true}
                   sizes="(max-width: 576px) 100vw, 576px"
                 />
-              ) : null}
+              ) : (
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 border-b border-dashed border-[#1E2D3D] text-center">
+                  <span className="font-mono text-[11px] text-[#607B96]">// screenshot-not-available</span>
+                  <span className="font-mono text-[10px] text-[#435c73]">no capture yet for this project</span>
+                </div>
+              )}
               <IconFramework project={project} />
             </div>
 

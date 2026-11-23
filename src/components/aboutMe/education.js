@@ -175,13 +175,13 @@ export default function Education() {
         {timelineStyle === "vertical" && (
           <div className="flex flex-col border-r-2 border-[#1E2D3D] p-6 pt-10 gap-5 max-sm:hidden bg-[#011221]/40">
             <div className="font-mono text-xs text-[#43D9AD]">
-              {"//"} Detail Institusi & Program
+              {"//"} Institution & Program Details
             </div>
             {selectedEdu && (
               <div className="p-4 rounded-xl bg-[#011627] border border-[#1E2D3D] space-y-2">
                 <h4 className="text-base font-bold text-white">{selectedEdu.school}</h4>
                 <p className="text-xs text-[#43D9AD] font-mono">{selectedEdu.degree}</p>
-                <p className="text-xs text-[#8AA0B4]">Periode: {selectedEdu.period}</p>
+                <p className="text-xs text-[#8AA0B4]">Period: {selectedEdu.period}</p>
                 {selectedEdu.grade && (
                   <p className="text-xs text-slate-300 pt-2 border-t border-[#1E2D3D]">{selectedEdu.grade}</p>
                 )}

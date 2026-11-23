@@ -8,6 +8,7 @@ import {
 } from "@/utils/sorter";
 import staticProjects from "@/project";
 import { fallbackProfile } from "@/constants/profile";
+import { sanitizeProjects } from "@/lib/projectImages";
 
 export { fallbackProfile };
 
@@ -27,12 +28,12 @@ export async function fetchProjects() {
     });
 
     if (list.length > 0) {
-      return sortProjectsByDate(list);
+      return sanitizeProjects(sortProjectsByDate(list));
     }
   } catch (err) {
     console.warn("Firestore fetchProjects warning:", err.message);
   }
-  return staticProjects;
+  return sanitizeProjects(staticProjects);
 }
 
 // Fetch Profile from Firestore
